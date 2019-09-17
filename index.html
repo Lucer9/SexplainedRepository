@@ -11,11 +11,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="binary.js"></script>
-    <link rel="stylesheet" href="estilos/style.css">
+
 
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="estilos/style.css">
+
+
     <!------ Include the above in your HEAD tag ---------->
 
 </head>
@@ -34,8 +39,8 @@
         </div>
     </div>
 
-<div class="space"></div>
-
+    <div class="space"></div>
+    <div class="dim"></div>
     <div class="wrapper container">
         <div class="row">
             <div class="col-sm-12">
@@ -53,10 +58,14 @@
                         <label for="passwordReg" class="whiteText">Contraseña</label>
                         <input type="password" class="form-control" id="passwordReg" placeholder="Ingresa tu contraseña">
                     </div>
-
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label whiteText" for="exampleCheck1">No cerrar sesión</label>
+                    </div>
                     <a href="modulos.html">
-                        <div class="btn btn-primary centered logInBtn"><b>Ingresar</b></div>
+                        <div class="btn whiteText centered logInBtn"><b>Ingresar</b></div>
                     </a>
+
                 </form>
             </div>
         </div>
@@ -69,4 +78,5 @@
 
 </body>
 
+    
 </html>

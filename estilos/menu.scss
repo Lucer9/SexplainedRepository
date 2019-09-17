@@ -120,7 +120,8 @@ h3 {
 
     .menu,
     .menu-spacer {
-        display: none
+        display: none;
+        z-index: 999999;
     }
 
     .logo {

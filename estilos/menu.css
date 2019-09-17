@@ -107,6 +107,7 @@ h3 {
   .menu,
 .menu-spacer {
     display: none;
+    z-index: 999999;
   }
 
   .logo {

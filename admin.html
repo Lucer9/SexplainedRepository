@@ -16,6 +16,9 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
 </head>
 
 <body>
@@ -52,6 +55,11 @@
     </div>
     <div class="menu-spacer"></div>
     <div class="menu-mobile"></div>
+    <script>
+        $(".menu-mobile").click(function() {
+            $(".menu").slideToggle("on");
+        });
+    </script>
 
 
     <div class="container">
@@ -62,13 +70,13 @@
 
         <div class="row justify-content-center">
             <div class="col col-lg-4 col-md-6 col-sm-12">
-                    <div class="module">
-                        <a onClick="alert('Seguro deseas monetizar?')">
-                            <div class="banner admin">
-                                <i class="fa fa-dollar white disabled"></i>
-                            </div>
-                        </a>
-                        <a href="nuevo.html">
+                <div class="module">
+                    <a onClick="alert('Seguro deseas monetizar?')">
+                        <div class="banner admin">
+                            <i class="fa fa-dollar white disabled"></i>
+                        </div>
+                    </a>
+                    <a href="nuevo.html">
                         <div class="image-container">
                             <img src="http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628" alt="">
                             <div class="detail"></div>
@@ -77,23 +85,24 @@
                             <img src="https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg" alt="">
                         </div>
                         <h3>¿Cómo poner un condón?</h3>
-                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p></a>
-                        <div class="footer">
-                            <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
-                            <a onClick="alert('Seguro deseas eliminar?')">
-                                <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
-                            </a>
-                        </div>
+                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p>
+                    </a>
+                    <div class="footer">
+                        <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
+                        <a onClick="alert('Seguro deseas eliminar?')">
+                            <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
+                        </a>
                     </div>
+                </div>
             </div>
             <div class="col col-lg-4 col-md-6  col-sm-12">
-                    <div class="module">
-                        <a onClick="alert('Seguro deseas monetizar?')">
-                            <div class="banner admin">
-                                <i class="fa fa-dollar white disabled"></i>
-                            </div>
-                        </a>
-                        <a href="nuevo.html">
+                <div class="module">
+                    <a onClick="alert('Seguro deseas monetizar?')">
+                        <div class="banner admin">
+                            <i class="fa fa-dollar white disabled"></i>
+                        </div>
+                    </a>
+                    <a href="nuevo.html">
                         <div class="image-container">
                             <img src="https://media.metrolatam.com/2019/07/10/screenshot201907-9deaa9f195426bc5ed25dacd32c27297-600x400.jpg" alt="">
                             <div class="detail"></div>
@@ -102,24 +111,25 @@
                             <img src="https://saludclubdeleones.com/wp-content/uploads/2014/07/doc6-300x300.png" alt="">
                         </div>
                         <h3>Pastillas Anticonceptivas</h3>
-                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p></a>
-                        <div class="footer">
-                            <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
-                            <a onClick="alert('Seguro deseas eliminar?')">
-                                <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
-                            </a>
-                        </div>
+                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p>
+                    </a>
+                    <div class="footer">
+                        <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
+                        <a onClick="alert('Seguro deseas eliminar?')">
+                            <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
+                        </a>
                     </div>
+                </div>
             </div>
 
             <div class="col col-lg-4 col-md-6  col-sm-12">
-                    <div class="module">
-                        <a onClick="alert('Seguro deseas desmonetizar?')">
-                            <div class="banner admin">
-                                <i class="fa fa-dollar white"></i>
-                            </div>
-                        </a>
-                        <a href="nuevo.html">
+                <div class="module">
+                    <a onClick="alert('Seguro deseas desmonetizar?')">
+                        <div class="banner admin">
+                            <i class="fa fa-dollar white"></i>
+                        </div>
+                    </a>
+                    <a href="nuevo.html">
                         <div class="image-container">
                             <img src="img/prego.jpg" alt="">
                             <div class="detail"></div>
@@ -128,19 +138,18 @@
                             <img src="https://img3.stockfresh.com/files/l/lisafx/m/48/209214_stock-photo-doctor---face-of-experience.jpg" alt="">
                         </div>
                         <h3>Embarazo</h3>
-                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p></a>
-                        <div class="footer">
-                            <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
-                            <a onClick="alert('Seguro deseas eliminar?')">
-                                <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
-                            </a>
-                        </div>
+                        <p>Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.</p>
+                    </a>
+                    <div class="footer">
+                        <a href="nuevo.html">Editar <i class="fa fa-edit"></i></a>
+                        <a onClick="alert('Seguro deseas eliminar?')">
+                            <p class="by admin">Eliminar <i class="fa fa-trash"></i></p>
+                        </a>
                     </div>
+                </div>
             </div>
 
         </div>
 
     </div>
-</body>
-
-</html>
+</body></html>

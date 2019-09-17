@@ -97,7 +97,7 @@ textarea {
 
 .add {
   background-color: transparent;
-  color: rgba(100, 100, 100, 0.5) !important;
+  color: white;
   display: block;
   width: 52px !important;
   line-height: 50px;
