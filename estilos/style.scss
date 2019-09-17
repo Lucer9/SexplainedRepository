@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import '../node_modules/bootstrap/scss/functions.scss';
+@import '../node_modules/bootstrap/scss/variables.scss';
+@import '../node_modules/bootstrap/scss/mixins/breakpoints.scss';
+@import 'general.scss';
+
+$grid-breakpoints: (xs: 0,
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px);
+
+/*********Elementos Generales*********/
+
+
+body {
+    font-family: $Poppins;
+    background-color: $blue;
+}
+
+/*********Secciones*********/
+#logIn {
+    margin: 50px auto;
+}
+
+/*********Elementos*********/
+.centered {
+    margin: 0 auto;
+}
+
+.form-control {
+    border-radius: 50px;
+}
+
+label {
+    margin: 15px 0;
+}
+
+a.pinkText {
+    margin: 10px;
+    display: inherit;
+}
+
+.logInBtn {
+    margin-top: 70px;
+    width: 100%;
+    background-color: $pink;
+    border-radius: 50px;
+    font-size: 30px;
+
+    @include media-breakpoint-up(md) {
+        width: 120%;
+        margin-left: -10%;
+    }
+}
+
+.roleBtn {
+    height: 73vw;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: $white;
+    padding-top: 20%;
+
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 15%;
+        height: 300px
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-top: 0px;
+        width: 220px;
+        margin: auto;
+        padding-top: 30%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 270px;
+        height: 350px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 350px;
+        height: 450px;
+    }
+}
+
+/*********Texto*********/
+.centerText {
+    text-align: center !important;
+}
+
+.centerSmall {
+    margin-top: 10px;
+}
+
+.whiteText {
+    color: $white;
+}
+
+.blackText {
+    color: $darkgray;
+}
+
+.pinkText {
+    color: $pink !important;
+
+}
+
+.roleText {
+    margin-top: 20%;
+    font-size: 30px;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 20%;
+        font-size: 25px;
+    }
+
+
+    @include media-breakpoint-up(lg) {
+        font-size: 30px;
+    }
+}
+
+#mainTitle {
+    font-family: 'Patua One', cursive;
+    margin-top: 50px;
+    font-size: 18vw;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 100px;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: 120px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 150px;
+    }
+}
+
+/*********Imágenes*********/
+.centerImg {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.chooseImg {
+    max-height: 100px;
+
+    @include media-breakpoint-up(lg) {
+        height: 90px;
+    }
+}
+
+#bgImg1,
+#bgImg2 {
+    width: 175px;
+    height: 175px;
+    z-index: -1;
+}
+
+#bgImg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#bgImg2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

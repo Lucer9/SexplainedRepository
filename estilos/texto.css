@@ -1,0 +1,136 @@
+body {
+  background-color: #F4F6F6 !important;
+  /*    background-color: #486BC7 !important;*/
+}
+
+p,
+h1,
+h2,
+h3,
+a {
+  font-family: "Poppins", sans-serif;
+  color: #292C2F;
+}
+
+.white {
+  color: #FFFFFF;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h2 {
+  font-weight: 600 !important;
+  margin-bottom: -10px !important;
+  margin-top: 20px !important;
+}
+
+.container {
+  max-width: none !important;
+  padding-right: 0 !important;
+}
+
+.capitulo {
+  margin-bottom: 150px;
+}
+
+.regresar {
+  width: 220px;
+  height: 60px;
+  right: 100px;
+  bottom: 30px;
+  background-color: #DA5A90;
+  font-family: "Poppins", sans-serif;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 45px;
+  border-radius: 30px;
+  position: fixed;
+  text-align: center;
+  line-height: 60px;
+  transition: background 0.3s ease;
+  border: 1px solid #DA5A90;
+  cursor: pointer;
+}
+
+.regresar:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #DA5A90;
+}
+
+.row input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.5);
+  margin-bottom: 20px;
+}
+
+.capitulo {
+  resize: none !important;
+  display: block !important;
+  margin: 20px auto !important;
+  width: 100%;
+  background-color: transparent !important;
+  border: 1px dashed rgba(100, 100, 100, 0.5);
+  padding: 15px;
+}
+.capitulo textarea {
+  border: 1px dashed rgba(100, 100, 100, 0.5);
+  height: 200px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+textarea {
+  resize: none !important;
+  display: block !important;
+  margin: 0px auto !important;
+  width: 100%;
+  background-color: transparent !important;
+  padding: 15px;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+}
+
+.add {
+  background-color: transparent;
+  color: rgba(100, 100, 100, 0.5) !important;
+  display: block;
+  width: 52px !important;
+  line-height: 50px;
+  margin: 20px auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  cursor: pointer;
+}
+
+.add:hover {
+  color: white !important;
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+@media (max-width: 1180px) {
+  .row {
+    width: 95%;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-bottom: 80px !important;
+  }
+
+  .regresar {
+    width: 60%;
+    right: 20%;
+    bottom: 18px;
+    font-size: 16px;
+    line-height: 45px;
+    height: auto;
+  }
+}
+
+/*# sourceMappingURL=texto.css.map */

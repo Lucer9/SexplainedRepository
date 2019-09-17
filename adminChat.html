@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Sexplained | Chat</title>
+    <link rel="stylesheet" href="estilos/reseter.css">
+    <link rel="stylesheet" href="estilos/chat.css">
+    <link rel="stylesheet" href="estilos/menu.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script%7CPoppins:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="menu">
+        <a href="admin.html">
+            <div class="block">
+                <i class="fa fa-book white"></i>
+                <p class="white">Modulos</p>
+            </div>
+        </a>
+
+        <a href="adminMitos.html">
+            <div class="block">
+                <i class="fa fa-question white"></i>
+                <p class="white">Mitos</p>
+            </div>
+        </a>
+
+        <a href="adminChat.html#send">
+            <div class="block selected">
+                <i class="fa fa-comment white"></i>
+                <p class="white">Chat</p>
+            </div>
+        </a>
+
+
+
+
+
+
+
+        <div class="block last">
+            <i class="fa fa-sign-out white"></i>
+            <p class="white">Salir</p>
+        </div>
+
+
+    </div>
+    <div class="menu-spacer"></div>
+    <div class="menu-mobile"></div>
+
+
+    <div class="container">
+        <img class="logo" src="img/Sexplained.svg" alt="">
+        <input class="searcher" type="text" placeholder="Buscar">
+
+        <div class="people">
+            <div class="person selected">
+                <div class="avatar">
+                    <img src="https://img1.ak.crunchyroll.com/i/spire3/04b29833ccaaf2ee6bda1d08f2f02ecf1539039197_main.jpg" alt="">
+                </div>
+                <p>Verde Pistache</p>
+                <p class="note">Mejor equipo</p>
+            </div>
+
+            <div class="person">
+                <div class="avatar">
+                    <img src="http://2015.igem.org/wiki/images/9/9d/Team_GenetiX_Kai.png" alt="">
+                </div>
+                <p>Kai Kawasaki</p>
+                <p class="note">Mex-Asiatico</p>
+            </div>
+
+           
+        </div>
+        <div class="chat-container">
+            <div class="chat">
+                <div class="message">
+                    <div class="bubble mine">
+                        <p>Hola profe? como esta?</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="bubble">
+                        <p>Hola equipo verde pistache!, bien y ustedes?</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="bubble mine">
+                        <p>A todo dar!</p>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="bubble mine">
+                        <p>Ya ponganos 100 profe 🤠</p>
+                    </div>
+                </div>
+                <div class="message mine">
+                    <div class="bubble">
+                        <p>Vavavava</p>
+                    </div>
+                </div>
+            </div>
+            <div class="send" id="send">
+                <input type="text" placeholder="Escribe tu mensaje...">
+                <button onClick="alert('Texto enviado')" type="submit"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

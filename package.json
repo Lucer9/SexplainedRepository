@@ -1,0 +1,22 @@
+{
+    "name": "sexplained",
+    "version": "1.0.0",
+    "description": "Entrega primer parcial",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sdev":"sass --watch estilos/general.scss estilos/general.css | sass --watch estilos/chat.scss estilos/chat.css | sass --watch estilos/dashboard.scss estilos/dashboard.css | sass --watch estilos/menu.scss estilos/menu.css | sass --watch estilos/style.scss estilos/style.css | sass --watch estilos/texto.scss estilos/texto.css" 
+
+    },
+    "author": "Memelords",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "sass": "^1.23.0-module.beta.1",
+        "scss": "^0.2.4"
+    },
+    "devDependencies": {
+        "node-sass": "^4.12.0",
+        "nodemon": "^1.19.2"
+    }
+}

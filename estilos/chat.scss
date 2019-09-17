@@ -1,0 +1,200 @@
+@import 'general.scss';
+
+body {
+    background-color: $gray !important;
+    /*    background-color: #486BC7 !important;*/
+}
+
+p,
+h1,
+h2,
+h3,
+a {
+    font-family: "Poppins", cursive;
+    color: $darkgray;
+}
+
+.white {
+    color: $white;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
+.people {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 80%;
+    margin: 20px auto;
+    flex: 0 0 auto;
+    height: 150px;
+}
+
+
+.person {
+    flex: 0 0 auto;
+    width: 140px;
+    margin: 0 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    p {
+        margin: 0;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    p.note {
+        font-size: 14px;
+        font-weight: 300;
+
+    }
+}
+
+
+.person.selected,
+.person:hover {
+    background-color: rgba(150, 150, 150, .1)
+}
+
+.avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: auto
+    }
+}
+
+
+
+
+.chat {
+    background-color: $white;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 50px;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.chat-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 120px;
+    height: 50vh;
+}
+
+.message {
+    position: relative;
+}
+
+.bubble {
+    max-width: 70%;
+    width: auto;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: $chatgreen;
+    position: sticky;
+    left: 100%;
+    display: inline-block;
+
+    p {
+        margin: 0;
+    }
+
+}
+
+
+.bubble.mine {
+    background-color: $chatblue;
+    left: 0%;
+
+}
+
+.send {
+    width: 80%;
+    position: absolute;
+    bottom: -80px;
+    height: 50px;
+    margin-left: 10%;
+
+    input {
+        padding: 15px;
+        width: 70%;
+        border: 1px solid $gray;
+        font-size: 13px;
+        color: gray;
+        outline: 0;
+        border-radius: 100px;
+        display: block;
+        margin-left: 10%;
+        float: left;
+    }
+
+
+    button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        width: 20%;
+
+        i {
+            display: block;
+            line-height: 45px;
+            color: $blue;
+        }
+    }
+}
+
+
+
+
+
+@media(max-width: 560px) {
+
+    .people {
+        height: 120px;
+    }
+
+    .person {
+        padding: 10px 0;
+        width: 90px;
+        height: 110px;
+
+        p {
+            font-size: 10px;
+        }
+
+
+        p.note {
+            font-size: 10px;
+
+        }
+    }
+
+
+    .bubble p {
+        font-size: 10px;
+    }
+
+    .send input {
+        margin-left: 0%
+    }
+
+}

@@ -1,0 +1,160 @@
+@import 'general.scss';
+
+body {
+    background-color: $gray !important;
+    /*    background-color: #486BC7 !important;*/
+}
+
+p,
+h1,
+h2,
+h3,
+a {
+    font-family: $Poppins;
+    color: $darkgray;
+}
+
+.white {
+    color: $white;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
+.menu-spacer {
+    background-color: $blue;
+    height: 100vh;
+    width: 100px;
+    display: block;
+    float: left;
+}
+
+.menu {
+    background-color: $blue;
+    height: 100vh;
+    width: 100px;
+    position: fixed;
+}
+
+.menu-mobile {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-image: url(../img/ham.svg);
+    cursor: pointer;
+    display: none;
+}
+
+.block {
+    height: 100px;
+    width: 100px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+    i {
+        text-align: center;
+        display: block;
+        font-size: 30px;
+        margin-bottom: 5px;
+
+    }
+
+    p {
+        text-align: center;
+        color: white;
+        font-weight: 600;
+
+    }
+}
+
+.block.selected {
+    background-color: $gray;
+
+    .white {
+        color: $pink;
+    }
+}
+
+.block:hover {
+    background-color: rgba(0, 0, 0, .5)
+}
+
+
+
+.block.last {
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+.logo {
+    width: 300px;
+    margin: 20px;
+}
+
+.searcher {
+    padding: 17px;
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    padding-left: 45px !important;
+    border: 1px solid $gray;
+    font-size: 13px;
+    color: gray;
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    outline: 0;
+    border-radius: 100px;
+
+}
+
+@media(max-width: 1180px) {
+
+    .menu,
+    .menu-spacer {
+        display: none
+    }
+
+    .logo {
+        margin-left: 100px;
+    }
+
+    .menu.on {
+        display: inherit;
+        left: 0px;
+        z-index: 100;
+    }
+
+
+    .menu-mobile {
+        display: block;
+    }
+
+}
+
+
+
+@media(max-width: 560px) {
+    .logo {
+        height: 40px;
+        margin: 20px 0px;
+        margin-left: -25px;
+
+    }
+
+    .menu-mobile {
+        height: 40px;
+        width: 40px;
+        top: 20px;
+        right: 30px;
+    }
+
+}
