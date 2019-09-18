@@ -165,15 +165,12 @@ a.pinkText {
 
 #mainTitle {
   font-family: "Patua One", cursive;
-  margin-top: 50px;
   font-size: 18vw;
+  margin: 0 !important;
 }
 @media (min-width: 576px) {
   #mainTitle {
     font-size: 100px;
-  }
-  #mainTitle .row {
-    margin: 0 !important;
   }
 }
 @media (min-width: 768px) {

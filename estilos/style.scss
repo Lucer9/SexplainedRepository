@@ -179,15 +179,11 @@ a.pinkText {
 
 #mainTitle {
     font-family: 'Patua One', cursive;
-    margin-top: 50px;
     font-size: 18vw;
+    margin: 0 !important;
 
     @include media-breakpoint-up(sm) {
         font-size: 100px;
-
-        .row {
-            margin: 0 !important;
-        }
     }
 
     @include media-breakpoint-up(md) {
@@ -235,17 +231,18 @@ a.pinkText {
 
 
 @media (max-width: 560px) {
-.logInBtn {
-    margin-top: 70px;
-    width: 80%;
-    margin-left: 10%;
-    /* margin: 0 auto; */
-    background-color: #DA5A90;
-    border-radius: 50px;
-    font-size: 16px;
+    .logInBtn {
+        margin-top: 70px;
+        width: 80%;
+        margin-left: 10%;
+        /* margin: 0 auto; */
+        background-color: #DA5A90;
+        border-radius: 50px;
+        font-size: 16px;
+    }
+
 }
-    
-}
+
 @media (max-width: 560px) {
     .space {
         display: none;
@@ -255,13 +252,14 @@ a.pinkText {
         padding: 20px !important;
 
     }
+
     .logInBtn {
         margin-top: 20px;
     }
-    
-    #mainTitle{
+
+    #mainTitle {
         margin: 0;
     }
-    
-    
+
+
 }
