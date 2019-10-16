@@ -1,0 +1,53 @@
+@import '/styles.scss';
+
+.side {
+    width: 100px;
+    height: 100vh;
+    background-color: #3499D3;
+    margin: 0;
+}
+
+.block {
+    height: 80px;
+    width: 100px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+    i {
+        text-align: center;
+        display: block;
+        font-size: 30px;
+        margin-bottom: 5px;
+
+    }
+
+    p {
+        text-align: center;
+        color: white;
+        font-weight: 600;
+
+    }
+}
+
+
+
+.block.selected {
+    background-color: $gray;
+
+    .white {
+        color: $pink;
+    }
+}
+
+.block:hover {
+    background-color: rgba(0, 0, 0, .5)
+}
+
+
+
+.block.last {
+    position: absolute;
+    bottom: 0;
+}

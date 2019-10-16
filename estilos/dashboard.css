@@ -33,6 +33,7 @@ h3 {
 
 .col {
   margin: 20px auto;
+  flex-basis: inherit !important;
 }
 
 .col:hover .module {
