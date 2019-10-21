@@ -11,7 +11,7 @@ import { SignupComponent } from './signup/signup.component';
   declarations: [
     AppComponent,
     SidemenuComponent,
-    LoginComponent
+    LoginComponent,
     SidemenuComponent,
     SignupComponent
   ],

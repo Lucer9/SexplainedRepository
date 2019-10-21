@@ -1,8 +1,8 @@
 <div class="side">
-    <a href="modulos.html">
-        <div class="block selected">
-            <i class="fa fa-book white"></i>
-            <p class="white">Modulos</p>
+    <a *ngFor="let mod of menu" href="{{mod.link}}">
+        <div class="block" [ngClass]="{'selected':mod.id == 1}">
+            <i class="fa white {{mod.icon}}"></i>
+            <p class="white">{{mod.text}}</p>
         </div>
     </a>
 
