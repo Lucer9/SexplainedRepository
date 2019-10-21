@@ -1,10 +1,15 @@
 @import '../../styles.scss';
 
-.side {
+#menu {
     width: 100px;
     height: 100vh;
     background-color: #3499D3;
+    position: absolute;
+    left: 0;
+    top: 0;
     margin: 0;
+    overflow: hidden;
+    transition: width .5s ease;
 }
 
 .block {

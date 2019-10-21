@@ -6,20 +6,37 @@ import { AppComponent } from './app.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CardComponent } from './card/card.component';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';  
+import { DataService } from './data.service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { EncuestasComponent } from './encuestas/encuestas.component'; 
+
 
 @NgModule({
-  declarations: [
+    declarations: [
     AppComponent,
     SidemenuComponent,
     LoginComponent,
     SidemenuComponent,
-    SignupComponent
+    SignupComponent,
+    CardComponent,
+    DashboardComponent,
+    CarritoComponent,
+    EncuestasComponent
   ],
-  imports: [
+    imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(DataService),
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,6 +1,6 @@
-<div class="side">
+<div id="menu">
     <a *ngFor="let mod of menu" href="{{mod.link}}">
-        <div class="block" [ngClass]="{'selected':mod.id == 1}">
+        <div class="block" [ngClass]="{'selected':mod.link == activeTab}">
             <i class="fa white {{mod.icon}}"></i>
             <p class="white">{{mod.text}}</p>
         </div>

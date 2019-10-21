@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,Input} from '@angular/core';
 @Component({
     selector: 'app-sidemenu',
     templateUrl: './sidemenu.component.html',
@@ -6,23 +6,20 @@ import {Component,OnInit} from '@angular/core';
 })
 
 export class SidemenuComponent implements OnInit {
-    active = "";
+    @Input() activeTab;
     menu;
     menuUser = [{
-            'link': "/",
+            'link': "/modulos",
             'text': "Módulos",
             'icon': "fa-book",
-            'id': 1
             }, {
-            'link': "/",
+            'link': "/carrito",
             'text': "Carrito",
             'icon': "fa-shopping-cart",
-            'id': 2
             }, {
-            'link': "/",
+            'link': "/encuestas",
             'text': "Encuestas",
             'icon': "fa-check",
-            'id': 3
             }
         ]
 
@@ -30,7 +27,6 @@ export class SidemenuComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.active = 1
         this.menu = this.menuUser;
     }
 
