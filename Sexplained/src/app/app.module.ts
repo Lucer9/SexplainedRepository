@@ -12,11 +12,14 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CarritoComponent } from './carrito/carrito.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { NoticiasComponent } from './noticias/noticias.component'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SingupUserComponent } from './singup-user/singup-user.component';
+import { SingupExpertComponent } from './singup-expert/singup-expert.component';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
 import { ModuleComponent } from './module/module.component';
@@ -42,6 +45,8 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
     CarritoComponent,
     EncuestasComponent,
     NoticiasComponent,
+    SingupUserComponent,
+    SingupExpertComponent
     ModuleComponent,
     SurveyComponent,
     UserComponent,
@@ -62,6 +67,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
                 deps: [HttpClient]
             }
         })
+    InMemoryWebApiModule.forRoot(DataService),
   ],
 
     providers: [],
