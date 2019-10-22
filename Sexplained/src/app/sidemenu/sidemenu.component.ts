@@ -12,6 +12,7 @@ import {UserService} from '../user.service';
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
     @Input() cart=0;
+    user;
     menu;
     menuUser = [{
             'link': "/modulos",
@@ -29,12 +30,12 @@ export class SidemenuComponent implements OnInit {
         ]
 
     constructor(private translate: TranslateService, private userService: UserService) {
-        this.userService.getUser(1).subscribe((user: any[]) => {
-            console.log(user);
+        this.userService.getUser(1).subscribe((user) => {
+            this.user=user
             this.translate.get('menu').subscribe((menu) => {
                 this.menuUser[0].text = menu.modulos;
                 this.menuUser[1].text = menu.encuestas;
-                this.menuUser[2].text = menu.carrito +' ('+user.cart.length+')';
+                this.menuUser[2].text = menu.carrito +' ('+this.user.cart.length+')';
             });
         }
     )};

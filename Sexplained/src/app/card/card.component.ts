@@ -9,7 +9,7 @@ import {UserService} from '../user.service';
 })
 export class CardComponent implements OnInit {
     closeResult: string;
-
+    user
     @Input() id = "0";
     @Input() banner = "https://images.homedepot-static.com/productImages/0b10f2de-892e-42b7-aed4-6fa738027a16/svn/storm-matte-formica-laminate-sheets-009121258512000-64_400_compressed.jpg";
     @Input() title = "Cargando...";
@@ -27,9 +27,8 @@ export class CardComponent implements OnInit {
 
     ngOnInit() {
         this.userService.getUser(1).subscribe((user: any[]) => {
-            console.log(user);
-            console.log(this.id)
-            if (user.bought_modules.includes(this.id)) {
+            this.user=user
+            if (this.user.bought_modules.includes(this.id)) {
                 this.price = 0;
             }
         });
