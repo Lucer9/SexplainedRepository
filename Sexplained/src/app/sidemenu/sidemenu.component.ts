@@ -33,4 +33,12 @@ export class SidemenuComponent implements OnInit {
         this.menu = this.menuUser;
     }
 
+    toggleMenu() {
+        if (document.getElementById("menu").offsetWidth == 0) {
+            document.getElementById("menu").style.width = "100px";
+        } else if (document.getElementById("menu").offsetWidth == 100) {
+            document.getElementById("menu").style.width = "0px";
+        }
+    }
+
 }

@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
         this.cardService.getCards().subscribe((cards: any[]) => {
             this.cards = cards;
             this.tempCards = cards;
+            console.log(cards)
         })
     }
 

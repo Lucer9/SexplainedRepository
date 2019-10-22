@@ -1,19 +1,38 @@
 <div class="card">
-    <div (click)="goToUser()" class="avatar" [ngStyle]="{ 'background-image': 'url(' + data.author.avatar + ')'}" placement="bottom" ngbTooltip="{{data.author.name}}"></div>
-    <a href="modulo/data.id">
-        <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + data.banner + ')'}">
+    <div (click)="goToUser()" class="avatar" [ngStyle]="{ 'background-image': 'url(' + authorAvatar + ')'}" placement="bottom" ngbTooltip="{{authorName}}"></div>
+    <a (click)="open(content)">
+        <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + banner + ')'}">
             <div class="detail"></div>
+            <span class="chip" *ngIf="price>0">$ {{price}}</span>
         </div>
-
+        
         <div class="text">
-            <h3>{{data.title}}</h3>
-            <p>{{data.text}}</p>
+            <h3>{{title}}</h3>
+            <p>{{text}}</p>
         </div>
         <div class="footer">
             <p class="a">Leer más...</p>
             <!--                    <p class="note">Por: {{author}}</p>-->
-            <p class="note">Creado: {{data.date}}</p>
+            <p class="note">Creado: {{date}}</p>
         </div>
     </a>
 
 </div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Añadir al Carrito</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <p>¿Deseas agregar el módulo de <strong>{{title}}</strong> a tu carrito?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="modal.close('Save click')">Agregar</button>
+    <button type="button" class="full" (click)="modal.close('Save click')">Comprar ahora</button>
+  </div>
+</ng-template>
+

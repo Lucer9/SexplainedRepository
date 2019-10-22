@@ -14,25 +14,85 @@ export class DataService implements InMemoryDbService {
     createDb() {
         let cards = [{
                 'id': "1",
+                'price': 0,
                 'banner': "http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628",
                 'title': "¿Comó poner un cóndon?",
-                'text': "Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. ... En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.",
-                'date': "12/09/2019",
+                'text': "Hay muchos mitos que rodean los principales aspectos una relación sexual. Algunos otros son simplemente tabu, en la isguiente lección el Doctor Harold te enseñara la importancia de los preservativos y su correcto uso al momento del acto sexual, para encontrarse preparado cuando el momento de la verdad llegue.",
+                'date': "10/04/2019",
                 'author': {
                     'id': "1",
                     'name': "Dr. Harold",
                     'avatar': "https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg"
                 }
-            },{
-                'id': "5",
-                'banner': "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/114292.jpg",
-                'title': "No Rompas Mas",
-                'text': "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                'date': "15/12/2019",
+            },
+            
+            {
+                'id': "2",
+                'price': 50,
+                'banner': "https://media.metrolatam.com/2019/07/10/screenshot201907-9deaa9f195426bc5ed25dacd32c27297-600x400.jpg",
+                'title': "Pastillas Anticonceptivas",
+                'text': "Mucha gente tiene ideas equivoacadas o hasta fantasiosas sobre las famosas pastillas anticonceptivas. A pesar de tratarse de un milagro médico del siglo XXI es importante saber de qué son capaces y a veces igual de importante de qué NO son capaces. La Dra. Martinez, especialista, refuerz y desmiente mucha de la información que circula sobre las mágicas pastillas.",
+                'date': "03/09/2019",
                 'author': {
-                    'id': "1",
-                    'name': "Dr. Psiquiatra",
-                    'avatar': "https://pbs.twimg.com/profile_images/771507219200249857/KQS3A75E.jpg"
+                    'id': "2",
+                    'name': "Dra. Martinez",
+                    'avatar': "https://saludclubdeleones.com/wp-content/uploads/2014/07/doc6-300x300.png"
+                }
+            },
+            
+             {
+                'id': "3",
+                'price': 75,
+                'banner': "http://i.espectaculos.televisa.com/2017/10/istock-504309660.jpg",
+                'title': "Embarazo",
+                'text': "Se denomina embarazo, gestación, preñez o gravidez al periodo que transcurre desde la implantación del óvulo fecundado en el útero hasta el momento del parto. ... En el embarazo humano la gestación suele ser única, sin embargo pueden producirse embarazos múltiples.",
+                'date': "14/02/2019",
+                'author': {
+                    'id': "3",
+                    'name': "Dr. Antonio",
+                    'avatar': "https://img3.stockfresh.com/files/l/lisafx/m/48/209214_stock-photo-doctor---face-of-experience.jpg"
+                }
+            },
+            
+            {
+                'id': "4",
+                'price': 0,
+                'banner': "https://www.insideedition.com/sites/default/files/styles/content_full/public/images/2018-06/istock-829471540.jpg?itok=6P3BxAyN",
+                'title': "¿El tamaño importa?",
+                'text': "La pregunta eterna. Se ha mantenido en la cabeza de todo primerizo (y no tan primerizo) en su vida sexual, pero ¿cuánta importancia tiene en realidad este hechp? ¿Vale la pena siquiera discutirlo? La Doctora Martinez atiende a la duda existencial de mucho y la importancia de discutirlo.",
+                'date': "26/08/2019",
+                'author': {
+                    'id': "2",
+                    'name': "Dra. Martinez",
+                    'avatar': "https://saludclubdeleones.com/wp-content/uploads/2014/07/doc6-300x300.png"
+                }
+            },
+            
+            {
+                'id': "5",
+                'price': 0,
+                'banner': "https://cf.ltkcdn.net/pregnancy/images/std/210579-766x450-Woman-showing-condom.jpg",
+                'title': "Con condón no se siente",
+                'text': "Hay aún mucha desinformación sobre el uso de métodos anticonceptivos y sus consecuencias en el acto sexual. Sin embargo, muchos de ellos resultan falsos y atender a ellos es la tarea que el Doctor Antonio se ha impuesto. Solucionar tus dudas sobre el uso de condón en una relación sexual y la improtancia del cuidado de uno mismo y de la pareja.",
+                'date': "30/07/2019",
+                'author': {
+                    'id': "3",
+                    'name': "Dr. Antonio",
+                    'avatar': "https://img3.stockfresh.com/files/l/lisafx/m/48/209214_stock-photo-doctor---face-of-experience.jpg"
+                }
+            },
+            
+            {
+                'id': "6",
+                'price': 25,
+                'banner': "https://c8.alamy.com/compes/rg5wm8/malestar-hombre-haciendo-gestos-de-pensamiento-en-la-moderna-sala-de-estar-rg5wm8.jpg",
+                'title': "'Acabar' afuera",
+                'text': "Muchos dicen que lo vieron en un video, o en una página de consejos dudosos, o un amigo les contó que era un método que podía ser infalible si se sabía ejecutar en el momento correcto. El doctor Antonio revisa cada uno de estos argumentos y su nivel de realidad en un escenario real.",
+                'date': "20/10/2019",
+                'author': {
+                    'id': "3",
+                    'name': "Dr. Antonio",
+                    'avatar': "https://img3.stockfresh.com/files/l/lisafx/m/48/209214_stock-photo-doctor---face-of-experience.jpg"
                 }
             }
             ];
