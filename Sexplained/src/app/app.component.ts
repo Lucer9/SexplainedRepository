@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
     selector: 'app-root',
@@ -7,5 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
     title = 'Sexplained';
-
+    constructor(private translate: TranslateService) {
+        translate.setDefaultLang('en');
+    }
 }

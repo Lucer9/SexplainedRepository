@@ -1,12 +1,5 @@
 @import '../../styles.scss';
 
-@mixin containImg {
-    overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
 
 h3 {
@@ -70,6 +63,17 @@ a {
         position: relative;
         border-radius: 10px 10px 0 0;
         @include containImg;
+
+        .chip {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: $pink;
+            color: $white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
     }
 
     .detail {
@@ -99,24 +103,37 @@ a {
         left: 0;
         width: 100%;
         position: absolute;
-        padding-left: 40px;
+        padding-left: 20px;
 
         .a {
             color: $pink;
-            font-size:13px;
+            font-size: 13px;
 
         }
 
         .note {
             position: absolute;
             bottom: 0;
-            right: 20px;
+            right: 40px;
             opacity: .3;
-            font-size:13px;
+            font-size: 13px;
         }
 
     }
 
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.full {
+    background-color: $pink;
+    color: $white;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 
@@ -128,6 +145,10 @@ a {
     .card p,
     .footer a {
         font-size: 14px !important;
+    }
+    
+    .note{
+        right: 20px !important;
     }
 
 }

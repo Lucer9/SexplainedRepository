@@ -10,7 +10,9 @@
     <a href="/">
         <div class="block last">
             <i class="fa fa-sign-out white"></i>
-            <p class="white">Salir</p>
+            <p class="white">{{ 'menu.salir' | translate }}</p>
         </div>
     </a>
 </div>
+
+<span id="mobile-menu" (click)="toggleMenu()"></span>

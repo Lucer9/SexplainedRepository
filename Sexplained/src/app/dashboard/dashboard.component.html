@@ -1,9 +1,12 @@
-<app-sidemenu activeTab="/modulos"></app-sidemenu>
+<app-sidemenu cart={{cart}} activeTab="/modulos"></app-sidemenu>
 <div class="home">
     <div class="container">
-        <div class="row justify-content-start">            
-            <div class="card-container col col-lg-4 col-md-6 col-sm-12">
-                <app-card></app-card>
+        <img class="logo" src="assets/sexplained.svg" alt="">
+        <input [(ngModel)]="searcher" (ngModelChange)="dataChanged($event)" name="searcher" value="{{searcher}}" class="searcher" type="text" placeholder="{{ 'cards.buscar' | translate}}">
+
+        <div class="row justify-content-start">
+            <div class="card-container col col-lg-4 col-md-6 col-sm-12" *ngFor="let card of cards">
+                <app-card id="{{card.id}}" banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" date="{{card.date}}" authorId="{{card.author.id}}" authorName="{{card.author.name}}" authorAvatar="{{card.author.avatar}}" price="{{card.price}}"></app-card>
             </div>
         </div>
     </div>

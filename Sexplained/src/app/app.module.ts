@@ -11,7 +11,6 @@ import { CardComponent } from './card/card.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';  
 import { DataService } from './data.service';
 
-import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CarritoComponent } from './carrito/carrito.component';
@@ -21,6 +20,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SingupUserComponent } from './singup-user/singup-user.component';
 import { SingupExpertComponent } from './singup-expert/singup-expert.component';
 
+
+import { FormsModule } from '@angular/forms';
+import { ModuleComponent } from './module/module.component';
+import { SurveyComponent } from './survey/survey.component';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
+
+// import ngx-translate and the http loader
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { ShopItemComponent } from './shop-item/shop-item.component';
 
 @NgModule({
     declarations: [
@@ -36,17 +47,34 @@ import { SingupExpertComponent } from './singup-expert/singup-expert.component';
     NoticiasComponent,
     SingupUserComponent,
     SingupExpertComponent
+    ModuleComponent,
+    SurveyComponent,
+    UserComponent,
+    AdminComponent,
+    ShopItemComponent
   ],
     imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    MDBBootstrapModule.forRoot(),    
+    NgbModule,    
+    InMemoryWebApiModule.forRoot(DataService, { passThruUnknownUrl: true }),
+    FormsModule,
+    HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     InMemoryWebApiModule.forRoot(DataService),
-    HttpClientModule
   ],
 
     providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}

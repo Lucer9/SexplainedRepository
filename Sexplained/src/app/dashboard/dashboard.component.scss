@@ -1,23 +1,4 @@
-.container {
-    max-width: none !important;
-    width: 95%;
-    padding: 0 !important;
-}
-
-.row {
-    width: 100%;
-    margin: 0 auto !important;
-    padding: 0 !important;
-}
-
-
-.home {
-    position: relative;
-    height: 100%;
-    margin-left: 100px;
-    transition: margin 1s ease;
-}
-
+@import '../../styles.scss';
 .card-container{
     margin: 20px 0;
 }

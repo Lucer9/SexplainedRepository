@@ -44,7 +44,7 @@ h3 {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-image: url(../img/ham.svg);
+    background-image: url(../img/ham.png);
     cursor: pointer;
     display: none;
 }
@@ -113,7 +113,6 @@ h3 {
     background-position: left center;
     outline: 0;
     border-radius: 100px;
-
 }
 
 @media(max-width: 1180px) {

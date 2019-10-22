@@ -1,0 +1,21 @@
+{
+    "menu": {
+        "modulos": "Modules",
+        "encuestas": "Surveys",
+        "carrito": "Cart",
+        "salir": "Log Out"
+    },
+    
+    "cards": {
+        "buscar": "Search",
+        "mas": "Read More",
+        "contestar": "Answer",
+        "creado": "Created"
+    },
+    
+    "info": {
+        "acerca": "About Me...",
+        "otros": "Other Modules",
+        "regresar": "Back"
+    }
+}

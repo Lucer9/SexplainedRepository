@@ -1,4 +1,8 @@
 import {Component,OnInit,Input} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../user.service';
+
 @Component({
     selector: 'app-sidemenu',
     templateUrl: './sidemenu.component.html',
@@ -7,30 +11,44 @@ import {Component,OnInit,Input} from '@angular/core';
 
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
+    @Input() cart=0;
     menu;
     menuUser = [{
             'link': "/modulos",
             'text': "Módulos",
             'icon': "fa-book",
-            'num': "0",
-
-            }, {
-            'link': "/carrito",
-            'text': "Carrito",
-            'icon': "fa-shopping-cart",
-            'num': "0",
             }, {
             'link': "/encuestas",
             'text': "Encuestas",
             'icon': "fa-check",
-            'num': "0",
+            }, {
+            'link': "/carrito",
+            'text': "Carrito",
+            'icon': "fa-shopping-cart",
             }
         ]
 
-    constructor() {}
+    constructor(private translate: TranslateService, private userService: UserService) {
+        this.userService.getUser(1).subscribe((user: any[]) => {
+            console.log(user);
+            this.translate.get('menu').subscribe((menu) => {
+                this.menuUser[0].text = menu.modulos;
+                this.menuUser[1].text = menu.encuestas;
+                this.menuUser[2].text = menu.carrito +' ('+user.cart.length+')';
+            });
+        }
+    )};
 
     ngOnInit() {
         this.menu = this.menuUser;
+    }
+
+    toggleMenu() {
+        if (document.getElementById("menu").offsetWidth == 0) {
+            document.getElementById("menu").style.width = "100px";
+        } else if (document.getElementById("menu").offsetWidth == 100) {
+            document.getElementById("menu").style.width = "0px";
+        }
     }
 
 }
