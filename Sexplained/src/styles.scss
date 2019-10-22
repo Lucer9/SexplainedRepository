@@ -3,6 +3,7 @@ $blue:#5298CE;
 
 
 $darkgray:#292C2F;
+$dimgray:#BFC0C1;
 $gray:#F4F6F6;
 $white:#FFFFFF;
 
@@ -11,26 +12,40 @@ $chatblue:#B6D7E4;
 
 $red:#FF0000;
 
-$Poppins:'Poppins', sans-serif;
+$Poppins:'Poppins',sans-serif;
 
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     margin: 0;
     margin-left: 100px;
 }
 
-.white{
+.white {
     color: white;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
+a,p,h1,h2,h3{
+    font-family: "Poppins", sans-serif;
 }
 
-p{
+p {
     margin: 0;
 }
 
-a{
+a {
     text-decoration: none;
+}
+
+#menu{
+    position: fixed !important;
+}
+
+
+@media(max-width: 700px) {
+    #menu{
+        width: 0 !important;
+    }
+    body,.home{
+        margin-left: 0px !important;
+    }
 }

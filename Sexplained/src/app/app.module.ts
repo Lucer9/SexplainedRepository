@@ -14,7 +14,10 @@ import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { EncuestasComponent } from './encuestas/encuestas.component'; 
+import { EncuestasComponent } from './encuestas/encuestas.component';
+import { NoticiasComponent } from './noticias/noticias.component'; 
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -27,11 +30,13 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
     CardComponent,
     DashboardComponent,
     CarritoComponent,
-    EncuestasComponent
+    EncuestasComponent,
+    NoticiasComponent
   ],
     imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,    
     InMemoryWebApiModule.forRoot(DataService),
     HttpClientModule
   ],

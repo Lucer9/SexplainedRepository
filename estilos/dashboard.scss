@@ -142,6 +142,7 @@ h3 {
     position: absolute;
     bottom: -45px;
     transform: scale(2) rotate(-3deg);
+    font-size:8px;
 }
 
 .by {
@@ -149,6 +150,7 @@ h3 {
     top: 0;
     right: 0;
     opacity: .3;
+    font-size:8px;
 }
 
 
@@ -256,10 +258,6 @@ a.add:hover {
     .module p,
     .footer a {
         font-size: 14px !important;
-    }
-
-    .detail {
-        bottom: -30px;
     }
 
 }

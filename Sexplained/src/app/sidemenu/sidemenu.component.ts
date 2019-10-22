@@ -12,19 +12,22 @@ export class SidemenuComponent implements OnInit {
             'link': "/modulos",
             'text': "Módulos",
             'icon': "fa-book",
+            'num': "0",
+
             }, {
             'link': "/carrito",
             'text': "Carrito",
             'icon': "fa-shopping-cart",
+            'num': "0",
             }, {
             'link': "/encuestas",
             'text': "Encuestas",
             'icon': "fa-check",
+            'num': "0",
             }
         ]
 
-    constructor() {
-    }
+    constructor() {}
 
     ngOnInit() {
         this.menu = this.menuUser;

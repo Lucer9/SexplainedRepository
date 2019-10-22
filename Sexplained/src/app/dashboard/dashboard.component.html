@@ -1,20 +1,10 @@
 <app-sidemenu activeTab="/modulos"></app-sidemenu>
-<h1>Insurance Policies</h1>
-<table style="width:100%">
-  <tr>
-    <th>Policy Number</th>
-    <th>Amount</th>
-    <th>Description</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let policy of policies" >
-    <td>{{ policy.num }}</td>
-    <td>{{ policy.amount }}</td>
-    <td>{{ policy.description }}</td>
-
-    <td>
-    <button (click)="deletePolicy(policy.id)">Delete</button>
-    <button (click)="updatePolicy(policy)">Update</button>
-    </td>
-  </tr>
-</table>
+<div class="home">
+    <div class="container">
+        <div class="row justify-content-start">            
+            <div class="card-container col col-lg-4 col-md-6 col-sm-12">
+                <app-card></app-card>
+            </div>
+        </div>
+    </div>
+</div>
