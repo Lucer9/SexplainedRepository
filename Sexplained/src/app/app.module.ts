@@ -19,6 +19,9 @@ import { NoticiasComponent } from './noticias/noticias.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
     declarations: [
@@ -38,7 +41,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule,    
     InMemoryWebApiModule.forRoot(DataService),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
 
     providers: [],

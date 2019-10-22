@@ -1,11 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
+
+import { CardService } from '../card.service';
+
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-    @Input() data = {
+    @Input() cardId;
+    
+    data = {
     'id':"0",
     'banner':"https://images.homedepot-static.com/productImages/0b10f2de-892e-42b7-aed4-6fa738027a16/svn/storm-matte-formica-laminate-sheets-009121258512000-64_400_compressed.jpg",
     'title':"Cargando...",
@@ -18,11 +25,15 @@ export class CardComponent implements OnInit {
         }
     }
     
-    constructor() {}
+    constructor(private cardService: CardService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.cardService.getCard(this.cardId).subscribe((card) => {
+            this.data=card;
+        })
+    }
 
-    alert(){
+    goToUser(){
         //@ts-ignore
         window.location = "usuarios/"+this.data.author.id;
     }
