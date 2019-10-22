@@ -1,0 +1,23 @@
+<app-sidemenu cart=0 activeTab="/modulos"></app-sidemenu>
+<div class="home">
+    <div class="banner" [ngStyle]="{ 'background-image': 'url(' + card.banner + ')'}"></div>
+    <div class="container">
+        <img class="logo" src="assets/sexplained.svg" alt="">
+        <a href="/autor/{{card.author.id}}">
+            <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + card.author.avatar + ')'}"></div>
+            <p class="author">{{card.author.name}}</p>
+        </a>
+        <h2>{{card.title}}</h2>
+        <p class="date">{{card.date}}</p>
+        <br>
+
+        <div class="text" >
+            <div class="decoration"></div>
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <a href="/modulos" class="back">
+        <p>Regresar</p>
+    </a>
+</div>

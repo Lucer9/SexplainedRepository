@@ -1,0 +1,25 @@
+<app-sidemenu cart=0 activeTab="/encuestas"></app-sidemenu>
+<div class="home">
+    <div class="banner" [ngStyle]="{ 'background-image': 'url(' + survey.banner + ')'}"></div>
+    <div class="container">
+        <img class="logo" src="assets/sexplained.svg" alt="">
+        <a href="/autor/{{survey.author.id}}">
+            <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + survey.author.avatar + ')'}"></div>
+            <p class="author">{{survey.author.name}}</p>
+        </a>
+        <h2>{{survey.title}}</h2>
+        <p class="date"> <i class='fa fa-users'></i> {{survey.people}}</p>
+        <p class="date"> {{survey.date}}</p>
+        <br>
+
+        <div class="text">
+            <div class="decoration"></div>
+            <form class="content">
+            </form>
+        </div>
+    </div>
+
+    <a href="/encuestas" class="back">
+        <p>Regresar</p>
+    </a>
+</div>

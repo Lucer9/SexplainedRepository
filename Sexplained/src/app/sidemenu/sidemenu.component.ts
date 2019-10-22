@@ -7,29 +7,27 @@ import {Component,OnInit,Input} from '@angular/core';
 
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
+    @Input() cart=0;
     menu;
     menuUser = [{
             'link': "/modulos",
             'text': "Módulos",
             'icon': "fa-book",
-            'num': "0",
-
-            }, {
-            'link': "/carrito",
-            'text': "Carrito",
-            'icon': "fa-shopping-cart",
-            'num': "0",
             }, {
             'link': "/encuestas",
             'text': "Encuestas",
             'icon': "fa-check",
-            'num': "0",
+            }, {
+            'link': "/carrito",
+            'text': "Carrito",
+            'icon': "fa-shopping-cart",
             }
         ]
 
     constructor() {}
 
     ngOnInit() {
+        this.menuUser[2].text=this.menuUser[2].text+' ('+this.cart+')'
         this.menu = this.menuUser;
     }
 

@@ -12,6 +12,27 @@ export class DataService implements InMemoryDbService {
 
     constructor() {}
     createDb() {
+        let surveys = [{
+                'id': "1",
+                'people': 47,
+                'banner': "https://www.merca2.es/wp-content/uploads/2017/09/vida-sexual-activa-2.jpg",
+                'title': "Vida Sexual",
+                'text': "Ser sano sexualmente significa cuidar tu salud emocional y física mediante la práctica de sexo más seguro y estando cómodo con tu cuerpo, tu sexualidad y tus relaciones.",
+                'date': "10/04/2019",
+                'author': {
+                    'id': "1",
+                    'name': "Dr. Harold",
+                    'avatar': "https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg"
+                },
+                'content':[
+                    {'type':'input','pregunta':'Input', 'data':'Hay que sad'},
+                    {'type':'checkbox','pregunta':'Checkbox','data':["Hola","Adios"]},
+                    {'type':'radio','pregunta':'Radial','data':["Hola","Adios"]},
+                    {'type':'radio','pregunta':'Radial2','data':["Hola","Adios"]},
+                    {'type':'radio','pregunta':'Radial3','data':["Hola","Adios"]},
+                    {'type':'textarea','pregunta':'Textarea', 'data':'Textarea'},
+                ]
+            }]
         let cards = [{
                 'id': "1",
                 'price': 0,
@@ -23,7 +44,12 @@ export class DataService implements InMemoryDbService {
                     'id': "1",
                     'name': "Dr. Harold",
                     'avatar': "https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg"
-                }
+                },
+                'content':[
+                    {'type':'title','data':'Capítulo 1'},
+                    {'type':'text','data':'Hay muchos mitos que rodean los principales aspectos una relación sexual.'},                                    {'type':'list','data':["Punto 1","Punto 3","Punto 2"]},
+                    {'type':'image','data':'http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628'},
+                ]
             },
             
             {
@@ -98,7 +124,7 @@ export class DataService implements InMemoryDbService {
             ];
 
         return {
-            cards
+            cards, surveys
         };
 
     }

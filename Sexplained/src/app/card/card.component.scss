@@ -1,12 +1,5 @@
 @import '../../styles.scss';
 
-@mixin containImg {
-    overflow: hidden;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
 
 h3 {
@@ -133,6 +126,7 @@ a {
 button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .full {

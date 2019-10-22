@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
 import { CarritoComponent } from './carrito/carrito.component'; 
 import { EncuestasComponent } from './encuestas/encuestas.component'; 
-
 import { CardComponent } from './card/card.component'; 
+import { ModuleComponent } from './module/module.component'; 
+import { SurveyComponent } from './survey/survey.component'; 
 
 const routes: Routes = [
     {
@@ -18,11 +19,17 @@ const routes: Routes = [
         path: 'encuestas',
         component: EncuestasComponent
     },{
+        path: 'modulos/:id',
+        component: ModuleComponent
+    },{
+        path: 'encuestas/:id',
+        component: SurveyComponent
+    },{
         path: '',
         component: DashboardComponent
     },{
         path: '**',
-        component: CardComponent
+        component: DashboardComponent
     }
 ];
 

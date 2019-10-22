@@ -12,6 +12,9 @@ export class DashboardComponent implements OnInit {
     cards: any[] = [];
     tempCards: any[] = [];
     results = []
+    
+    @Input() cart=0;
+
     searcher = ""
 
     constructor(private cardService: CardService) {}

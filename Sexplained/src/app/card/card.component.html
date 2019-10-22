@@ -4,6 +4,7 @@
         <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + banner + ')'}">
             <div class="detail"></div>
             <span class="chip" *ngIf="price>0">$ {{price}}</span>
+            <span class="chip" *ngIf="people!=''"><i class='fa fa-users'></i> {{people}}</span>
         </div>
         
         <div class="text">
@@ -11,8 +12,8 @@
             <p>{{text}}</p>
         </div>
         <div class="footer">
-            <p class="a">Leer más...</p>
-            <!--                    <p class="note">Por: {{author}}</p>-->
+            <p class="a" *ngIf="people==''">Leer más...</p>
+            <p class="a" *ngIf="people!=''">Contestar</p>
             <p class="note">Creado: {{date}}</p>
         </div>
     </a>

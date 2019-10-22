@@ -1,49 +1,4 @@
 @import '../../styles.scss';
-
-.container {
-    max-width: none !important;
-    width: 95%;
-    padding: 0 !important;
-}
-
-.row {
-    width: 100%;
-    margin: 0 auto !important;
-    padding: 0 !important;
-}
-
-
-.home {
-    position: relative;
-    height: 100%;
-    margin-left: 100px;
-    transition: margin 1s ease;
-}
-
 .card-container{
     margin: 20px 0;
-}
-
-.logo {
-    max-width: 300px;
-    width: 60%;
-    margin: 20px;
-}
-
-.searcher {
-    padding: 17px;
-    width: 70%;
-    margin: 0 auto;
-    display: block;
-    padding-left: 45px !important;
-    border: 1px solid $gray;
-    font-size: 13px;
-    color: gray;
-    background-image: url(/assets/search.svg);
-    background-repeat: no-repeat;
-    background-position: left center;
-    outline: 0;
-    border-radius: 100px;
-    background-color: $gray;
-
 }

@@ -20,6 +20,8 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
+import { ModuleComponent } from './module/module.component';
+import { SurveyComponent } from './survey/survey.component';
 
 
 
@@ -34,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     CarritoComponent,
     EncuestasComponent,
-    NoticiasComponent
+    NoticiasComponent,
+    ModuleComponent,
+    SurveyComponent
   ],
     imports: [
     BrowserModule,

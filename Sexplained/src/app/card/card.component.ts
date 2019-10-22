@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
     @Input() date = "Fecha";
     @Input() authorId = "0";
     @Input() price = 0;
+    @Input() people = "";
     @Input() authorName = "Nombre";
     @Input() authorAvatar = "https://i1.wp.com/ggrmlawfirm.com/wp-content/uploads/avatar-placeholder.png?fit=256%2C256&ssl=1";
 
@@ -40,7 +41,13 @@ export class CardComponent implements OnInit {
                 console.log(`Dismissed ${this.getDismissReason(reason)}`);
             });
         }else{
-        window.open("modulo/" + this.id,'_blank');
+            if(this.people!=''){
+                window.open("encuestas/" + this.id,'_blank');
+            }else{
+                window.open("modulos/" + this.id,'_blank');
+
+            }
+            
         }
     }
 
