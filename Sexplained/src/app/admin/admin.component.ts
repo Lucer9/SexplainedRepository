@@ -39,18 +39,24 @@ export class AdminComponent implements OnInit {
     }
 
     ngOnInit() {
+        //@ts-ignore
+
         this.adminService.getAdmin(this.id).subscribe((admin: any[]) => {
             //@ts-ignore
             var myEl = angular.element(document.querySelector('.content'));
             this.admin = admin;
             console.log(admin)
-            for (var i = 0; i < admin.modules.length;i++) {
+            for (var i = 0; i < admin.modules.length; i++) {
+                //@ts-ignore
+
                 this.cardService.getCard(admin.modules[i]).subscribe((card: any[]) => {
                     this.cards.push(card)
                 })
             }
-            
-            for (var i = 0; i < admin.surveys.length;i++) {
+
+            for (var i = 0; i < admin.surveys.length; i++) {
+                //@ts-ignore
+
                 this.surveyService.getSurvey(admin.surveys[i]).subscribe((card: any[]) => {
                     this.cards.push(card)
                 })
