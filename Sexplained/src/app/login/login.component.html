@@ -1,62 +1,46 @@
  <div id="background-carousel">
- 		<mdb-carousel [isControls]="false" [animation]="'slide'">
-		  <mdb-carousel-item>
-		    <img class="d-block w-100" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/15/14/istock-187235013.jpg?w968/" style="height:100vh;" alt="First slide">
-		  </mdb-carousel-item>
-		  <mdb-carousel-item>
-		    <img class="d-block w-100" src="http://www.coface-eu.org/wp-content/uploads/2017/09/NewsSept-WHDayUNAF.jpg" style="height:100vh;" alt="Second slide">
-		  </mdb-carousel-item>
-		  <mdb-carousel-item>
-		    <img class="d-block w-100" src="https://images.yourstory.com/cs/5/79900dd0-d913-11e8-a160-45a90309d734/shutterstock_12929380871561564974814.png?fm=png&auto=format" style="height:100vh;" alt="Third slide">
-		  </mdb-carousel-item>
-		  <mdb-carousel-item>
-		    <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3NurnZ3nIF0NgoqlqKibOhXS_1nQp4cP0yJJH6AWN_K-kN4k7" style="height:100vh;" alt="Fourth slide">
-		  </mdb-carousel-item>
-		</mdb-carousel>
-		<!--
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active" style="background-image:url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/15/14/istock-187235013.jpg?w968/)"></div>
-                <div class="item" style="background-image:url(http://www.coface-eu.org/wp-content/uploads/2017/09/NewsSept-WHDayUNAF.jpg)"></div>
-                <div class="item" style="background-image:url(https://images.yourstory.com/cs/5/79900dd0-d913-11e8-a160-45a90309d734/shutterstock_12929380871561564974814.png?fm=png&auto=format)"></div>
-                <div class="item" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3NurnZ3nIF0NgoqlqKibOhXS_1nQp4cP0yJJH6AWN_K-kN4k7)"></div>
-            </div>
-        </div>-->
-    </div>
+     <mdb-carousel [isControls]="false" [animation]="'slide'">
+         <mdb-carousel-item *ngFor="let image of images">
+             <div class="car" [ngStyle]="{ 'background-image': 'url(' + image + ')'}">
+                 <p>a</p>
+             </div>
+         </mdb-carousel-item>
+     </mdb-carousel>
+ </div>
 
-    <div class="space"></div>
-    <div class="dim"></div>
-    <div class="wrapper container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="centerText whiteText" id="mainTitle">Sexplain<span style="color: #EC4E91">Ed</span></h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-8 col-sm-12" id="logIn">
-                <form>
-                    <div class="form-group">
-                        <label for="correoReg" class="whiteText">Correo</label>
-                        <input type="email" class="form-control" id="correoReg" placeholder="Ingresa tu correo">
-                    </div>
-                    <div class="form-group">
-                        <label for="passwordReg" class="whiteText">Contraseña</label>
-                        <input type="password" class="form-control" id="passwordReg" placeholder="Ingresa tu contraseña">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label whiteText" for="exampleCheck1">No cerrar sesión</label>
-                    </div>
-                    <a href="modulos.html">
-                        <div class="btn whiteText centered logInBtn"><b>Ingresar</b></div>
-                    </a>
+ <div class="space"></div>
+ <div class="dim"></div>
+ <div class="wrapper container">
+     <div class="row justify-content-center">
+         <div class="col-sm-6">
+             <img src="/assets/sexplainedWhite.svg" />
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-lg-6 col-md-8 col-sm-12" id="logIn">
+             <form>
+                 <div class="form-group">
+                     <label for="correoReg" class="whiteText">Correo</label>
+                     <input type="email" class="form-control" id="correoReg" placeholder="Ingresa tu correo">
+                 </div>
+                 <div class="form-group">
+                     <label for="passwordReg" class="whiteText">Contraseña</label>
+                     <input type="password" class="form-control" id="passwordReg" placeholder="Ingresa tu contraseña">
+                 </div>
+                 <div class="form-check">
+                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                     <label class="form-check-label whiteText" for="exampleCheck1">No cerrar sesión</label>
+                 </div>
+                 <a href="modulos.html">
+                     <div class="btn whiteText centered logInBtn"><b>Ingresar</b></div>
+                 </a>
 
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <p class="whiteText centerText">¿No tienes un usuario?<br><a href="/registro" class="pinkText"><u>Crea una cuenta</u></a></p>
-            </div>
-        </div>
-    </div>
+             </form>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-sm-12">
+             <p class="whiteText centerText">¿No tienes un usuario?<br><a href="/registro" class="pinkText"><u>Crea una cuenta</u></a></p>
+         </div>
+     </div>
+ </div>
