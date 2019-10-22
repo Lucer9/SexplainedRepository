@@ -33,6 +33,9 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ShopItemComponent } from './shop-item/shop-item.component';
 
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
+
 @NgModule({
     declarations: [
     AppComponent,
@@ -56,7 +59,8 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
     imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,    
+    NgbModule,
+    MDBBootstrapModule.forRoot(),    
     InMemoryWebApiModule.forRoot(DataService, { passThruUnknownUrl: true }),
     FormsModule,
     HttpClientModule,
@@ -70,7 +74,8 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
     ],
 
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule {}
 
