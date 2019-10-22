@@ -46,7 +46,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
     EncuestasComponent,
     NoticiasComponent,
     SingupUserComponent,
-    SingupExpertComponent
+    SingupExpertComponent,
     ModuleComponent,
     SurveyComponent,
     UserComponent,
@@ -67,8 +67,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
                 deps: [HttpClient]
             }
         })
-    InMemoryWebApiModule.forRoot(DataService),
-  ],
+    ],
 
     providers: [],
     bootstrap: [AppComponent]
