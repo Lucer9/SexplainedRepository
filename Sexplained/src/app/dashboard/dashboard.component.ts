@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { PolicyService } from '../policy.service';
+import { CardService } from '../card.service';
 
 
 @Component({
@@ -9,14 +10,14 @@ import { PolicyService } from '../policy.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-    policies: any[] = [];
+    cards: any[] = [];
 
-    constructor(private policyService: PolicyService) {}
+    constructor(private cardService: CardService) {}
 
     ngOnInit() {
-        this.policyService.getPolicies().subscribe((data: any[]) => {
+        this.cardService.getCards().subscribe((data: any[]) => {
             console.log(data);
-            this.policies = data;
+            this.cards = data;
         })
     }
 }

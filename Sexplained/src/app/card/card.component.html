@@ -1,6 +1,6 @@
 <div class="card">
-    <div (click)="alert()" class="avatar" [ngStyle]="{ 'background-image': 'url(' + data.avatar + ')'}" placement="bottom" ngbTooltip="{{data.author}}"></div>
-    <a href="/">
+    <div (click)="alert()" class="avatar" [ngStyle]="{ 'background-image': 'url(' + data.author.avatar + ')'}" placement="bottom" ngbTooltip="{{data.author.name}}"></div>
+    <a href="modulo/data.id">
         <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + data.banner + ')'}">
             <div class="detail"></div>
         </div>
