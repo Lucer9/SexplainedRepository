@@ -20,7 +20,6 @@ export class CardComponent implements OnInit {
 
     alert(){
         alert("hola!");
-        window.location = "#/"+this.data.author;
     }
 
 }
