@@ -22,6 +22,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ModuleComponent } from './module/module.component';
 import { SurveyComponent } from './survey/survey.component';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -38,7 +40,9 @@ import { SurveyComponent } from './survey/survey.component';
     EncuestasComponent,
     NoticiasComponent,
     ModuleComponent,
-    SurveyComponent
+    SurveyComponent,
+    UserComponent,
+    AdminComponent
   ],
     imports: [
     BrowserModule,

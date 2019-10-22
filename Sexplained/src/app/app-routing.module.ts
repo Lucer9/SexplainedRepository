@@ -7,6 +7,7 @@ import { EncuestasComponent } from './encuestas/encuestas.component';
 import { CardComponent } from './card/card.component'; 
 import { ModuleComponent } from './module/module.component'; 
 import { SurveyComponent } from './survey/survey.component'; 
+import { AdminComponent } from './admin/admin.component'; 
 
 const routes: Routes = [
     {
@@ -24,6 +25,9 @@ const routes: Routes = [
     },{
         path: 'encuestas/:id',
         component: SurveyComponent
+    },{
+        path: 'autor/:id',
+        component: AdminComponent
     },{
         path: '',
         component: DashboardComponent

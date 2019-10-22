@@ -12,6 +12,40 @@ export class DataService implements InMemoryDbService {
 
     constructor() {}
     createDb() {
+        let admins = [{
+            'id': "1",
+            'name': "Dr. Harold",
+            'modules': [1],
+            'surveys': [1],
+            'avatar': "https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg",
+            'info': "PROFILE  State the type of job you are seeking and highlight several of your most important, impressive and marketable skills.  SUMMARY OF SKILLS  - Include your most marketable skills and accomplishments here. - Ensure the skills you list are relevant to the type of job you are seeking. - Be as specific as possible. - Ensure that this section is full of the keywords employers will likely use when sorting resumes. - If keywords are commonly stated more than on way, you must use both forms of the word (for example, Master of Business Administration and MBA)",
+            'phone': "+521 7234789289",
+            'mail': "drharold@gmail.com",
+            'banner':"https://i.kym-cdn.com/photos/images/newsfeed/000/839/199/8a9.jpg"
+
+        },{
+            'id': "2",
+            'name': "Dra. Martinez",
+            'modules': [2,4],
+            'surveys': [],
+            'avatar': "https://saludclubdeleones.com/wp-content/uploads/2014/07/doc6-300x300.png",
+            'info': "PROFILE  State the type of job you are seeking and highlight several of your most important, impressive and marketable skills.  SUMMARY OF SKILLS  - Include your most marketable skills and accomplishments here. - Ensure the skills you list are relevant to the type of job you are seeking. - Be as specific as possible. - Ensure that this section is full of the keywords employers will likely use when sorting resumes. - If keywords are commonly stated more than on way, you must use both forms of the word (for example, Master of Business Administration and MBA)",
+            'phone': "+521 7327742783",
+            'mail': "martinez@gmail.com",
+            'banner':"https://i.ytimg.com/vi/K6LA7v1PApU/maxresdefault.jpg"
+
+        },{
+            'id': "3",
+            'name': "Dr. Antonio",
+            'modules': [3,5,6],
+            'surveys': [],
+            'avatar': "https://img3.stockfresh.com/files/l/lisafx/m/48/209214_stock-photo-doctor---face-of-experience.jpg",
+            'info': "PROFILE  State the type of job you are seeking and highlight several of your most important, impressive and marketable skills.  SUMMARY OF SKILLS  - Include your most marketable skills and accomplishments here. - Ensure the skills you list are relevant to the type of job you are seeking. - Be as specific as possible. - Ensure that this section is full of the keywords employers will likely use when sorting resumes. - If keywords are commonly stated more than on way, you must use both forms of the word (for example, Master of Business Administration and MBA)",
+            'phone': "+521 5522994347",
+            'mail': "drantonio@gmail.com",
+            'banner':"https://image.freepik.com/free-photo/pills-medical-equiupments-green-banner-background_8087-321.jpg"
+
+        }]
         let surveys = [{
                 'id': "1",
                 'people': 47,
@@ -124,7 +158,7 @@ export class DataService implements InMemoryDbService {
             ];
 
         return {
-            cards, surveys
+            cards, surveys, admins
         };
 
     }

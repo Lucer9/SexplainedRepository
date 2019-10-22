@@ -1,0 +1,35 @@
+<app-sidemenu cart=0></app-sidemenu>
+<div class="home">
+    <div class="banner" [ngStyle]="{ 'background-image': 'url(' + admin.banner + ')'}"></div>
+    <div class="container">
+        <img class="logo" src="assets/sexplained.svg" alt="">
+        <a>
+            <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + admin.avatar + ')'}"></div>
+        </a>
+        <h2>{{admin.name}}</h2>
+        <a class="contact" href="mailto:{{admin.mail}}">{{admin.mail}}</a>
+        <a class="contact" href="tel:{{admin.phone}}">{{admin.phone}}</a>
+        <br>
+
+        <div class="text">
+            <div class="decoration"></div>
+            <div class="content">
+                <h3>Acercad de mi...</h3>
+                <p>{{admin.info}}</p>
+                <h3>Otros Modulos</h3>
+                <div class="row justify-content-start">
+                    <div class="card-container col col-lg-6 col-md-12 col-sm-12" *ngFor="let card of cards">
+                        <app-card id="{{card.id}}" banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" date="{{card.date}}" authorId="{{card.author.id}}" authorName="{{card.author.name}}" authorAvatar="{{card.author.avatar}}" price="{{card.price}}"></app-card>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <a href="/" class="back">
+        <p>Regresar</p>
+    </a>
+</div>
