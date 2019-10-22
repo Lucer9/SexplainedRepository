@@ -11,7 +11,6 @@ import { CardComponent } from './card/card.component';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';  
 import { DataService } from './data.service';
 
-import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
@@ -25,7 +24,10 @@ import { SurveyComponent } from './survey/survey.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 
-
+// import ngx-translate and the http loader
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -48,12 +50,23 @@ import { AdminComponent } from './admin/admin.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,    
-    InMemoryWebApiModule.forRoot(DataService),
+    InMemoryWebApiModule.forRoot(DataService, { passThruUnknownUrl: true }),
+    FormsModule,
     HttpClientModule,
-    FormsModule
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
   ],
 
     providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}

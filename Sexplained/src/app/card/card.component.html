@@ -12,9 +12,9 @@
             <p>{{text}}</p>
         </div>
         <div class="footer">
-            <p class="a" *ngIf="people==''">Leer más...</p>
-            <p class="a" *ngIf="people!=''">Contestar</p>
-            <p class="note">Creado: {{date}}</p>
+            <p class="a" *ngIf="people==''">{{ 'cards.mas' | translate}}</p>
+            <p class="a" *ngIf="people!=''">{{ 'cards.contestar' | translate}}</p>
+            <p class="note">{{ 'cards.creado' | translate}}: {{date}}</p>
         </div>
     </a>
 

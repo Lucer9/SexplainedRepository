@@ -14,9 +14,9 @@
         <div class="text">
             <div class="decoration"></div>
             <div class="content">
-                <h3>Acercad de mi...</h3>
+                <h3>{{ 'info.acerca' | translate}}</h3>
                 <p>{{admin.info}}</p>
-                <h3>Otros Modulos</h3>
+                <h3>{{ 'info.otros' | translate}}</h3>
                 <div class="row justify-content-start">
                     <div class="card-container col col-lg-6 col-md-12 col-sm-12" *ngFor="let card of cards">
                         <app-card id="{{card.id}}" banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" date="{{card.date}}" authorId="{{card.author.id}}" authorName="{{card.author.name}}" authorAvatar="{{card.author.avatar}}" price="{{card.price}}" people="{{card.people}}"></app-card>
@@ -30,6 +30,6 @@
     </div>
 
     <a href="/" class="back">
-        <p>Regresar</p>
+        <p>{{ 'info.regresar' | translate}}</p>
     </a>
 </div>

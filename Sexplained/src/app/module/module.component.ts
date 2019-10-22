@@ -2,6 +2,8 @@ import {Component,OnInit,Input} from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {CardService} from '../card.service';
+
+
 @Component({
     selector: 'app-module',
     templateUrl: './module.component.html',
