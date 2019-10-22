@@ -1,6 +1,8 @@
 import {Component,OnInit,Input} from '@angular/core';
-
 import {TranslateService} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../user.service';
+
 @Component({
     selector: 'app-sidemenu',
     templateUrl: './sidemenu.component.html',
@@ -26,13 +28,16 @@ export class SidemenuComponent implements OnInit {
             }
         ]
 
-    constructor(private translate: TranslateService) {
-        this.translate.get('menu').subscribe((menu) => {
-            this.menuUser[0].text = menu.modulos;
-            this.menuUser[1].text = menu.encuestas;
-            this.menuUser[2].text = menu.carrito +' ('+this.cart+')';
-        });
-    }
+    constructor(private translate: TranslateService, private userService: UserService) {
+        this.userService.getUser(1).subscribe((user: any[]) => {
+            console.log(user);
+            this.translate.get('menu').subscribe((menu) => {
+                this.menuUser[0].text = menu.modulos;
+                this.menuUser[1].text = menu.encuestas;
+                this.menuUser[2].text = menu.carrito +' ('+user.cart.length+')';
+            });
+        }
+    )};
 
     ngOnInit() {
         this.menu = this.menuUser;

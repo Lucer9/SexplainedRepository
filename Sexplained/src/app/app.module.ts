@@ -28,6 +28,7 @@ import { AdminComponent } from './admin/admin.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { ShopItemComponent } from './shop-item/shop-item.component';
 
 @NgModule({
     declarations: [
@@ -44,7 +45,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     ModuleComponent,
     SurveyComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    ShopItemComponent
   ],
     imports: [
     BrowserModule,

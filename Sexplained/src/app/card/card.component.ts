@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
-
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../user.service';
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
@@ -21,9 +21,19 @@ export class CardComponent implements OnInit {
     @Input() authorName = "Nombre";
     @Input() authorAvatar = "https://i1.wp.com/ggrmlawfirm.com/wp-content/uploads/avatar-placeholder.png?fit=256%2C256&ssl=1";
 
-    constructor(private modalService: NgbModal) {}
+    constructor(private modalService: NgbModal, private userService: UserService) {
 
-    ngOnInit() {}
+    }
+
+    ngOnInit() {
+        this.userService.getUser(1).subscribe((user: any[]) => {
+            console.log(user);
+            console.log(this.id)
+            if (user.bought_modules.includes(this.id)) {
+                this.price = 0;
+            }
+        });
+    }
 
 
     goToUser() {
@@ -40,14 +50,12 @@ export class CardComponent implements OnInit {
             }, (reason) => {
                 console.log(`Dismissed ${this.getDismissReason(reason)}`);
             });
-        }else{
-            if(this.people!=''){
-                window.open("encuestas/" + this.id,'_blank');
-            }else{
-                window.open("modulos/" + this.id,'_blank');
-
+        } else {
+            if (this.people != '') {
+                window.open("encuestas/" + this.id, '_blank');
+            } else {
+                window.open("modulos/" + this.id, '_blank');
             }
-            
         }
     }
 
@@ -61,6 +69,4 @@ export class CardComponent implements OnInit {
             return `with: ${reason}`;
         }
     }
-
-
 }
