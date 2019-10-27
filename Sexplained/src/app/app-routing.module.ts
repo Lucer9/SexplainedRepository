@@ -43,14 +43,14 @@ const routes: Routes = [
         path: 'registroExperto',
         component: SingupExpertComponent
     },{
+        path: 'graficas',
+        component: FormChartComponent
+    },{
         path: '',
         component: LoginComponent
     },{
         path: '**',
         component: DashboardComponent
-    },{
-        path: 'graficas',
-        component: FormChartComponent
     }
 ];
 

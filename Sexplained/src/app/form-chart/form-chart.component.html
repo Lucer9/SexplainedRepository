@@ -1,4 +1,7 @@
-<p></p>
-
-<script src="node_modules/chart.js/Chart.min.js"></script>
-<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+<div class="row">
+	<div class="chartContainer col-lg-4 col-md-6">
+		<div *ngIf="chart">
+		  <canvas id="canvas">{{ chart }}</canvas>
+		</div>
+	</div>
+</div>
