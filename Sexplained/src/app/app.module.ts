@@ -32,6 +32,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ShopItemComponent } from './shop-item/shop-item.component';
+import { FormChartComponent } from './form-chart/form-chart.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -54,7 +55,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
     SurveyComponent,
     UserComponent,
     AdminComponent,
-    ShopItemComponent
+    ShopItemComponent,
+    FormChartComponent
   ],
     imports: [
     BrowserModule,

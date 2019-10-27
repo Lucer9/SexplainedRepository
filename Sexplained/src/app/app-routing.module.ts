@@ -11,6 +11,7 @@ import { SingupUserComponent } from './singup-user/singup-user.component';
 import { SingupExpertComponent } from './singup-expert/singup-expert.component';
 import { ModuleComponent } from './module/module.component'; 
 import { SurveyComponent } from './survey/survey.component'; 
+import { FormChartComponent } from './form-chart/form-chart.component';
 import { AdminComponent } from './admin/admin.component'; 
 
 const routes: Routes = [
@@ -47,6 +48,9 @@ const routes: Routes = [
     },{
         path: '**',
         component: DashboardComponent
+    },{
+        path: 'graficas',
+        component: FormChartComponent
     }
 ];
 
