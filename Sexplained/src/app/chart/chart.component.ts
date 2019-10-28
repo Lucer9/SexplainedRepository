@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
-import { Data } from '../Data';
 import { ChartService } from '../chart.service';
 import { AdminService } from '../admin.service';
 
@@ -15,7 +14,7 @@ export class ChartComponent implements OnInit {
 	closeResult: string;
 	@Input()id = '';
 	@Input()title = 'app';
-	data: Data[];
+	data;
 	url = 'http://localhost:4000/estadisticas';
 	nombres = [];
 	visitas = [];
@@ -36,7 +35,8 @@ export class ChartComponent implements OnInit {
         })
     this.adminService.getAdmin(this.adminId).subscribe((admin: any[]) => {
             this.admin = admin;
-            this.httpClient.get(this.url).subscribe((res: Data[]) => {
+            this.httpClient.get(this.url).subscribe((res) => {
+    //@ts-ignore
       res.forEach(y => {
         if(this.admin.modules.includes(y.numero)){
           this.nombres.push(y.nombre);

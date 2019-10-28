@@ -63,9 +63,9 @@ import { ModuleAddComponent } from './module-add/module-add.component';
     ShopItemComponent,
     AdminHomeComponent,
     ModuleEditComponent,
-    ModuleAddComponent
+    ModuleAddComponent,
     FormChartComponent,
-    ChartComponent
+    ChartComponent,
   ],
     imports: [
     BrowserModule,
@@ -82,7 +82,6 @@ import { ModuleAddComponent } from './module-add/module-add.component';
                 deps: [HttpClient]
             }
         }),
-        BrowserAnimationsModule
     ],
 
     providers: [],
