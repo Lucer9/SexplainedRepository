@@ -28,8 +28,8 @@
             </div>
         </a>
     </div>
-    
-    
+
+
     <div *ngIf="isUser==0">
         <a href="/adminhome">
             <div class="block" [ngClass]="{'selected': activeTab == '/adminhome'}">
@@ -40,7 +40,7 @@
 
         <a href="/graphs">
             <div class="block" [ngClass]="{'selected': activeTab== '/graphs'}">
-                <i class="fa white fa-chart-bar"></i>
+                <i class="fas white fa-chart-bar"></i>
                 <p class="white">{{ 'menu.reportes' | translate }}</p>
             </div>
         </a>
@@ -54,7 +54,7 @@
     </div>
     <a href="/">
         <div class="block last">
-            <i class="fa fa-door-open white"></i>
+            <i class="fas fa-outdent white"></i>
             <p class="white">{{ 'menu.salir' | translate }}</p>
         </div>
     </a>

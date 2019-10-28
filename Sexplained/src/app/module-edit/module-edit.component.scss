@@ -1,0 +1,211 @@
+@import '../../styles.scss';
+
+
+@mixin resetInput {
+    background-color: rgba(0, 0, 0, .05);
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    overflow: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.home{padding-bottom: 150px;}
+
+.banner {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 60vh;
+    background-color: white;
+    @include containImg;
+
+}
+
+.avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    @include containImg;
+    z-index: 1;
+    margin: 0 auto;
+    @include shadow;
+}
+
+.date {
+    margin-top: 10px;
+    text-align: center;
+    @include contrast;
+    opacity: .5;
+}
+
+.title {
+    @include resetInput;
+    text-align: center;
+    width: 50%;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+.image {
+    @include resetInput;
+    text-align: center;
+    width: 50%;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.text {
+    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+
+    .content {
+        z-index: 1;
+        background-color: white;
+        width: 100%;
+        padding: 40px;
+        min-height: 300px;
+
+        .adder{
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -10px;
+            font-size: 20px;
+
+        }
+
+        input,
+        textarea,img {
+            @include resetInput;
+            margin-top: 10px;
+            color: $darkgray;
+            width: 80%;
+            padding: 5px;
+        }
+
+    }
+
+    .decoration {
+        @include shadow;
+        height: 250px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0px;
+        background-color: white;
+    }
+}
+
+
+.d-inline-block {
+    margin: 10px auto;
+    width: 50px;
+    display: block !important;
+}
+
+.dropdown-menu {
+    top: 10px !important;
+    left: -60px !important;
+
+}
+
+::after{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+.back {
+    width: 30%;
+    position: fixed;
+    bottom: 20px;
+    left: 20%;
+    z-index: 10;
+    padding-left: 100px;
+
+    p {
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid $pink;
+        background-color: transparent;
+        color: $pink;
+        border-radius: 100px;
+    }
+}
+
+.save {
+    width: 30%;
+    position: fixed;
+    bottom: 20px;
+    right: 20%;
+    z-index: 10;
+
+    p {
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        margin: 0 auto;
+        background-color: $pink;
+        color: white;
+        border-radius: 100px;
+    }
+}
+
+.save:hover p {
+    background-color: transparent;
+    color: $pink;
+    border: 1px solid $pink
+    
+}
+
+.back:hover p {
+    background-color: $pink;
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.full {
+    background-color: $pink;
+    color: $white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+@media(max-width: 700px) {
+    .text {
+        width: 100%;
+
+        img {
+            margin: 20px 0;
+            width: 100%;
+        }
+    }
+}

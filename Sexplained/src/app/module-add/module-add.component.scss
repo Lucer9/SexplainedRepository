@@ -136,10 +136,10 @@
 
 
 .back {
-    width: 50%;
+    width: 30%;
     position: fixed;
     bottom: 20px;
-    left: 0;
+    left: 20%;
     z-index: 10;
     padding-left: 100px;
 
@@ -156,12 +156,11 @@
 }
 
 .save {
-    width: 50%;
+    width: 30%;
     position: fixed;
     bottom: 20px;
-    right: 0;
+    right: 20%;
     z-index: 10;
-    padding-left: 100px;
 
     p {
         width: 200px;
@@ -174,8 +173,16 @@
     }
 }
 
+.save:hover p {
+    background-color: transparent;
+    color: $pink;
+    border: 1px solid $pink
+    
+}
+
 .back:hover p {
-    @include shadow;
+    background-color: $pink;
+    color: white;
 }
 
 button {
