@@ -1,0 +1,120 @@
+@import '../../styles.scss';
+
+img {
+    width: 70vw;
+    margin: 20px;
+    max-width: 300px;
+}
+
+h4 {
+    margin-bottom: 40px;
+    margin-left: 5%;
+}
+
+.form-label {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+
+    label {
+        position: absolute;
+        top: -12px;
+        opacity: .5;
+        width: 100%;
+
+    }
+
+    input {
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        width: 100%;
+        color: white;
+
+    }
+}
+
+.button {
+    position: relative;
+    display: block;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: $pink;
+}
+
+#payment {
+    width: 35vw;
+    height: 100vh;
+    background-color: $blue;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: right .3s ease-in;
+    @include shadow;
+    padding: 20px;
+    color: white;
+
+    .detail {
+        transform: rotate(270deg);
+        bottom: 50px;
+        left: -60px;
+        padding: 10px 25px 50px 25px;
+        border-radius: 10px;
+        z-index: 1;
+        position: absolute;
+        background-color: $blue;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.cursos:hover {
+    @include shadow;
+}
+
+.price {
+    width: 50vw;
+    max-width: 960px;
+    padding: 10px;
+
+    p {
+        font-size: 24px;
+        text-align: right;
+    }
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.full {
+    background-color: $pink;
+    color: $white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+@media(max-width: 950px) {
+    .price {
+        width: 100%;
+    }
+
+    #payment {
+        width: 75vw !important;
+    }
+}

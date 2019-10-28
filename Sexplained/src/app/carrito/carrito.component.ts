@@ -1,15 +1,99 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,HostListener} from '@angular/core';
+import { CardService } from '../card.service';
+import { UserService } from '../user.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-carrito',
-  templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.scss']
+    selector: 'app-carrito',
+    templateUrl: './carrito.component.html',
+    styleUrls: ['./carrito.component.scss']
 })
+
 export class CarritoComponent implements OnInit {
+    user
+    side;
+    innerWidth
+    paymentOpen = true;
+    totalPrice = 0;
+    currentId = 0;
+    currentProduct = "";
+    closeResult;
+    cart;
+    size;
+    cards = [];
+    constructor(private modalService: NgbModal, private userService: UserService, private cardService: CardService) {}
 
-  constructor() { }
+    ngOnInit() {
+        this.innerWidth = window.innerWidth;
+        if (innerWidth <= 950) {
+            this.paymentOpen = false
+            this.side = "-75vw"
+        } else {
+            this.paymentOpen = true
+            this.side = "-35vw"
+        }
+        this.userService.getUser(1).subscribe((user: any[]) => {
+            this.user = user;
+            this.cart = this.user.cart;
+            this.size = this.cart.length;
+            for (var i = 0; i < this.cart.length; i++) {
+                console.log(this.cart[i])
+                this.cardService.getCard(this.cart[i]).subscribe((card) => {
+                    this.cards.push(card)
+                    var c = card
+                    this.totalPrice = c.price + this.totalPrice
+                });
 
-  ngOnInit() {
-  }
+            }
+        });
+    }
 
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.innerWidth = window.innerWidth;
+        if (innerWidth <= 950) {
+            this.paymentOpen = false
+            this.side = "-75vw"
+        } else {
+            this.paymentOpen = true
+            this.side = "-35vw"
+        }
+    }
+
+    open(content, card) {
+        this.currentId = card.id;
+        this.currentProduct = card.title;
+        this.modalService.open(content, {
+            ariaLabelledBy: 'modal-basic-title'
+        }).result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            console.log(this.closeResult);
+            if (reason== "remove") {
+                this.cardService.deleteCard(card.id);
+                this.cards = this.cards.filter(function (e) {
+                    return e.id !== card.id;
+                });
+                this.size--;
+                this.totalPrice -= card.price
+            }
+        });
+    }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return `with: ${reason}`;
+        }
+    }
+
+    toggle() {
+        if (this.innerWidth<=950) {
+            this.paymentOpen = !this.paymentOpen
+        }
+    }
 }

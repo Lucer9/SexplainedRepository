@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
     @Input() cart=0;
 
     searcher = ""
-
     constructor(private cardService: CardService) {}
 
     ngOnInit() {
@@ -38,5 +37,11 @@ export class DashboardComponent implements OnInit {
             }
         }
         this.cards=this.results
+    }
+
+
+    displayCounter(count) {
+        console.log(count);
+        this.cart=this.cart+count
     }
 }

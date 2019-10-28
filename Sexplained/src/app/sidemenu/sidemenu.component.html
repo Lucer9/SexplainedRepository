@@ -1,12 +1,36 @@
 <div id="menu">
-    <a *ngFor="let mod of menu" href="{{mod.link}}">
-        <div class="block" [ngClass]="{'selected':mod.link == activeTab}">
-            <i class="fa white {{mod.icon}}"></i>
-            <p class="white">{{mod.text}}</p>
-        </div>
-    </a>
+    <div>
+        <a href="/modulos">
+            <div class="block" [ngClass]="{'selected': activeTab == '/modulos'}">
+                <i class="fa white fa-book"></i>
+                <p class="white">{{ 'menu.modulos' | translate }}</p>
+            </div>
+        </a>
+
+        <a href="/encuestas">
+            <div class="block" [ngClass]="{'selected': activeTab== '/encuestas'}">
+                <i class="fa white fa-check"></i>
+                <p class="white">{{ 'menu.encuestas' | translate }}</p>
+            </div>
+        </a>
+
+        <a href="/carrito">
+            <div class="block" [ngClass]="{'selected': activeTab== '/carrito'}">
+                <i class="fa white fa-shopping-cart"></i>
+                <p class="white" name="cart" ngDefaultControl [(ngModel)]="cart">({{cart}}) {{ 'menu.carrito' | translate }}</p>
+            </div>
+        </a>
+
+        <a href="/settings">
+            <div class="block" [ngClass]="{'selected': activeTab== '/settings'}">
+                <i class="fa white fa-gear"></i>
+                <p class="white">{{ 'menu.ajustes' | translate }}</p>
+            </div>
+        </a>
 
 
+
+    </div>
     <a href="/">
         <div class="block last">
             <i class="fa fa-door-open white"></i>

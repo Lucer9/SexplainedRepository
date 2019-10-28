@@ -3,6 +3,7 @@
         "modulos": "Modules",
         "encuestas": "Surveys",
         "carrito": "Cart",
+        "ajustes": "Settings",
         "salir": "Log Out"
     },
     
@@ -17,5 +18,14 @@
         "acerca": "About Me...",
         "otros": "Other Modules",
         "regresar": "Back"
+    },
+    
+    "payment": {
+        "card": "Credit Card Details",
+        "pago": "Payment",
+        "rmv": "Do you want to remove {{product}} from the cart?",
+        "cancelar": "Cancel",
+        "aceptar": "Accept",
+        "title": "Remove Product"
     }
 }

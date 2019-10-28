@@ -5,6 +5,7 @@
             <div class="detail"></div>
             <span class="chip" *ngIf="price>0">$ {{price}}</span>
             <span class="chip" *ngIf="people!=''"><i class='fa fa-users'></i> {{people}}</span>
+            <span class="chip" *ngIf="cart"><i class='fa fa-shopping-cart'></i></span>
         </div>
         
         <div class="text">
@@ -32,8 +33,8 @@
         <p>¿Deseas agregar el módulo de <strong>{{title}}</strong> a tu carrito?</p>
   </div>
   <div class="modal-footer">
-    <button type="button" (click)="modal.close('Save click')">Agregar</button>
-    <button type="button" class="full" (click)="modal.close('Save click')">Comprar ahora</button>
+    <button type="button" (click)="modal.dismiss('add')">Agregar</button>
+    <button type="button" class="full" (click)="modal.dismiss('buy')">Comprar ahora</button>
   </div>
 </ng-template>
 

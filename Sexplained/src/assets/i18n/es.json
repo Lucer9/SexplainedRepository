@@ -1,0 +1,31 @@
+{
+    "menu": {
+        "modulos": "Módulos",
+        "encuestas": "Encuestas",
+        "carrito": "Carrito",
+        "ajustes": "Configuración",
+        "salir": "Cerrar Sesión"
+    },
+    
+    "cards": {
+        "buscar": "Busqueda",
+        "mas": "Leer más",
+        "contestar": "Responder",
+        "creado": "Creado"
+    },
+    
+    "info": {
+        "acerca": "Acerca de mí...",
+        "otros": "Otros módulos",
+        "regresar": "Atrás"
+    },
+    
+    "payment": {
+        "card": "Detalles de Tarjeta de Crédito",
+        "pago": "Forma de pago",
+        "rmv": "¿Desea eliminar {{product}} de su carrito?",
+        "cancelar": "Cancelar",
+        "aceptar": "Aceptar",
+        "title": "Eliminar producto"
+    }
+}

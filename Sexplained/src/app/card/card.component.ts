@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../user.service';
@@ -10,7 +10,8 @@ import {UserService} from '../user.service';
 export class CardComponent implements OnInit {
     closeResult: string;
     user
-    @Input() id = "0";
+    cart = false;
+    @Input() id = 0;
     @Input() banner = "https://images.homedepot-static.com/productImages/0b10f2de-892e-42b7-aed4-6fa738027a16/svn/storm-matte-formica-laminate-sheets-009121258512000-64_400_compressed.jpg";
     @Input() title = "Cargando...";
     @Input() text = "Cargando...";
@@ -21,15 +22,25 @@ export class CardComponent implements OnInit {
     @Input() authorName = "Nombre";
     @Input() authorAvatar = "https://i1.wp.com/ggrmlawfirm.com/wp-content/uploads/avatar-placeholder.png?fit=256%2C256&ssl=1";
 
+    @Output() valueChange = new EventEmitter();
+    counter = 0;
+
     constructor(private modalService: NgbModal, private userService: UserService) {
 
     }
 
     ngOnInit() {
         this.userService.getUser(1).subscribe((user: any[]) => {
-            this.user=user
-            if (this.user.bought_modules.includes(this.id)) {
+            this.user = user
+            if (this.user.bought_modules.includes(+this.id)) {
                 this.price = 0;
+            }
+
+            if (this.user.cart.includes(+this.id)) {
+                this.price = 0;
+                this.cart = true;;
+                this.counter = this.counter + 1;
+                this.valueChange.emit(this.counter);
             }
         });
     }
@@ -47,17 +58,23 @@ export class CardComponent implements OnInit {
             }).result.then((result) => {
                 this.closeResult = `Closed with: ${result}`;
             }, (reason) => {
-                console.log(`Dismissed ${this.getDismissReason(reason)}`);
+                this.closeResult = this.getDismissReason(reason);
+                if (this.closeResult == 'with: add') {
+                    this.addProduct();
+                } else if (this.closeResult == 'with: buy') {
+                    console.log("buy")
+                }
             });
         } else {
-            if (this.people != '') {
-                window.open("encuestas/" + this.id, '_blank');
-            } else {
-                window.open("modulos/" + this.id, '_blank');
+            if (!this.cart) {
+                if (this.people != '') {
+                    window.open("encuestas/" + this.id, '_blank');
+                } else {
+                    window.open("modulos/" + this.id, '_blank');
+                }
             }
         }
     }
-
 
     private getDismissReason(reason: any): string {
         if (reason === ModalDismissReasons.ESC) {
@@ -68,4 +85,21 @@ export class CardComponent implements OnInit {
             return `with: ${reason}`;
         }
     }
+
+    addProduct() {
+        console.log(this.counter)
+        if (!this.user.cart.includes(this.id)) {
+            this.user.cart.push(this.id)
+            this.userService.updateUser(this.user).subscribe((ret) => {});
+
+            this.counter = this.user.cart.length;
+            this.valueChange.emit(this.counter);
+
+
+
+            this.cart = true;
+            this.price = 0;
+        }
+    }
+
 }

@@ -1,8 +1,17 @@
-import {Component,OnInit,Input} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {HttpClient} from '@angular/common/http';
-import {UserService} from '../user.service';
-
+import {
+    Component,
+    OnInit,
+    Input
+} from '@angular/core';
+import {
+    TranslateService
+} from '@ngx-translate/core';
+import {
+    HttpClient
+} from '@angular/common/http';
+import {
+    UserService
+} from '../user.service';
 @Component({
     selector: 'app-sidemenu',
     templateUrl: './sidemenu.component.html',
@@ -11,7 +20,7 @@ import {UserService} from '../user.service';
 
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
-    @Input() cart=0;
+    @Input() cart = 0;
     user;
     menu;
     menuUser = [{
@@ -31,14 +40,14 @@ export class SidemenuComponent implements OnInit {
 
     constructor(private translate: TranslateService, private userService: UserService) {
         this.userService.getUser(1).subscribe((user) => {
-            this.user=user
+            this.user = user
             this.translate.get('menu').subscribe((menu) => {
                 this.menuUser[0].text = menu.modulos;
                 this.menuUser[1].text = menu.encuestas;
-                this.menuUser[2].text = menu.carrito +' ('+this.user.cart.length+')';
             });
-        }
-    )};
+            this.cart=this.user.cart.length
+        })
+    };
 
     ngOnInit() {
         this.menu = this.menuUser;
@@ -51,5 +60,4 @@ export class SidemenuComponent implements OnInit {
             document.getElementById("menu").style.width = "0px";
         }
     }
-
 }

@@ -1,1 +1,15 @@
-<p>shop-item works!</p>
+<div class="row justify-content-start">
+    <div class="col-2 np">
+        <div class="image-container" [ngStyle]="{ 'background-image': 'url(' + banner + ')'}"></div>
+    </div>
+    <div class="col-6 col-sm-7">
+        <p class="bold">{{title}}</p>
+        <p class="comment">{{text}}</p>
+    </div>
+    <div class="col-3">
+        <p class="price">$ {{price}}</p>
+    </div>
+    <i class=" close fas fa-times"></i>
+</div>
+<!--
+<p>Descripcion</p>-->

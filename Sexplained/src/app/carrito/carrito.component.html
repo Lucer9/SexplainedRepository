@@ -1,1 +1,48 @@
-<app-sidemenu activeTab="/carrito"></app-sidemenu>
+<app-sidemenu cart={{size}} activeTab="/carrito"></app-sidemenu>
+<div class="home">
+    <img src="/assets/sexplained.svg">
+    <div class="container">
+        <div *ngFor="let card of cards" class="cursor" (click)="open(content,card)">
+            <app-shop-item banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" price="{{card.price}}"></app-shop-item>
+        </div>
+        <div class="price">
+            <p>Total: <strong>${{totalPrice}}</strong></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="payment" [ngStyle]="{'right':paymentOpen? '0' : side }">
+    <p class="detail" (click)="toggle()">{{ 'payment.pago' | translate}}</p>
+    <h4>{{ 'payment.card' | translate}}</h4>
+    <div class="form-label">
+        <label for="card">Credit Card</label>
+        <input id="card" type="tel" placeholder="" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx">
+    </div>
+    <div class="form-label">
+        <label for="card">Date:</label>
+        <input id="card" type="tel" placeholder="" maxlength="5" placeholder="12/24">
+    </div>
+    <div class="form-label">
+        <label for="card">CVC:</label>
+        <input id="card" type="tel" placeholder="" maxlength="3" placeholder="343">
+    </div>
+    <button class="button">Pagar</button>
+
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{ 'payment.title' | translate}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>{{ 'payment.rmv' | translate:{ product: currentProduct } }}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="modal.dismiss('')">{{ 'payment.cancelar' | translate}}</button>
+        <button type="button" class="full" (click)="modal.dismiss('remove')">{{ 'payment.aceptar' | translate}}</button>
+    </div>
+</ng-template>

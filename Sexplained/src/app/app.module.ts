@@ -34,6 +34,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ShopItemComponent } from './shop-item/shop-item.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        BrowserAnimationsModule
     ],
 
     providers: [],
