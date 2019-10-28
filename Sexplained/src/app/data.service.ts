@@ -34,7 +34,7 @@ export class DataService implements InMemoryDbService {
             'banner': "https://i.kym-cdn.com/photos/images/newsfeed/000/839/199/8a9.jpg"
 
         }, {
-            'id': "12",
+            'id': "3",
             'name': "Dra. Martinez",
             'modules': [2, 4],
             'surveys': [],
