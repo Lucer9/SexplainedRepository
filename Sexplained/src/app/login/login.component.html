@@ -18,22 +18,22 @@
      </div>
      <div class="row">
          <div class="col-lg-6 col-md-8 col-sm-12" id="logIn">
-             <form>
+             <form #formulario ="ngForm" (ngSubmit)="enviarFormulario()">
                  <div class="form-group">
-                     <label for="correoReg" class="whiteText">Correo</label>
-                     <input type="email" class="form-control" id="correoReg" placeholder="Ingresa tu correo">
+                     <label for="mail" class="whiteText">Correo</label>
+                     <input type="email" class="form-control" id="mail" name="mail" placeholder="Ingresa tu correo" [(ngModel)]="usuario.mail">
                  </div>
                  <div class="form-group">
-                     <label for="passwordReg" class="whiteText">Contraseña</label>
-                     <input type="password" class="form-control" id="passwordReg" placeholder="Ingresa tu contraseña">
+                     <label for="password" class="whiteText">Contraseña</label>
+                     <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" [(ngModel)]="usuario.password">
                  </div>
                  <div class="form-check">
                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
                      <label class="form-check-label whiteText" for="exampleCheck1">No cerrar sesión</label>
                  </div>
-                 <a href="modulos.html">
-                     <div class="btn whiteText centered logInBtn"><b>Ingresar</b></div>
-                 </a>
+                 <div class="centerText whiteText" id="passCheckLabel">    No existe usuario con esas credenciales.
+                    </div>
+                 <input type="submit" class="btn btn-primary centered logInBtn" value="Ingresar">
 
              </form>
          </div>

@@ -157,23 +157,11 @@ export class DataService implements InMemoryDbService {
                     'name': "Dr. Harold",
                     'avatar': "https://thumbs.dreamstime.com/z/senior-doctor-holding-papers-smiling-23096004.jpg"
                 },
-                'content': [
-                    {
-                        'type': 'title',
-                        'data': 'Capítulo 1'
-                    },
-                    {
-                        'type': 'text',
-                        'data': 'Sin sombrero no hay vaquero... Una lección del doctor Harold'
-                    }, {
-                        'type': 'list',
-                        'data': ["—Deberíamos volver ya —instó Gared mientras los bosques se tornaban más y más oscuros a su alrededor—. Los salvajes están muertos. —¿Te dan miedo los muertos? —preguntó Ser Waymar Royce, insinuando apenas una sonrisa. —Los muertos están muertos —contestó Gared. No había mordido el anzuelo. Era un anciano de más de cincuenta años, y había visto ir y venir a muchos jóvenes señores—. No tenemos nada que tratar con ellos.", "—¿Y de veras están muertos? —preguntó Royce delicadamente—. ¿Qué prueba tenemos? —Will los vio —respondió Gared—. Si él dice que están muertos, no necesito más pruebas. —Mi madre me dijo que los muertos no cantan canciones —intervino Will. Sabía que lo iban a meter en la disputa tarde o temprano. Le habría gustado que fuera más tarde que temprano.", "—Mi ama de cría me dijo lo mismo, Will —replicó Royce—. Nunca creas nada de lo que te diga una mujer cuando estás junto a su teta. Hasta de los muertos se pueden aprender cosas. —Su voz resonó demasiado alta en el anochecer del bosque. —Tenemos un largo camino por delante —señaló Gared—. Ocho días, hasta puede que nueve. Y se está haciendo de noche. —Como todos los días alrededor de esta hora —dijo Ser Waymar Royce después de echar una mirada indiferente al cielo—. ¿La oscuridad te atemoriza, Gared?"]
-                    },
-                    {
-                        'type': 'image',
-                        'data': 'http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628'
-                    },
-                ]
+                'content':[
+                    {'type':'title','data':'Capítulo 1'},
+                    {'type':'text','data':'Hay muchos mitos que rodean los principales aspectos una relación sexual.'},                                    {'type':'list','data':["Punto 1","Punto 3","Punto 2"]},
+                    {'type':'image','data':'http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628'},
+                ],
             },
 
             {
@@ -330,11 +318,26 @@ export class DataService implements InMemoryDbService {
             }
             ];
 
+        let charts = [
+            {
+                'id': "1",
+                'title': 'Visitas',
+                'atributo': 'visitas',
+            },
+            {
+                'id': "2",
+                'title': 'Compras',
+                'atributo': 'compras'
+            },
+            {
+                'id': "3",
+                'title': 'Ganancias',
+                'atributo': 'ganancias'
+            }
+        ]
+
         return {
-            cards,
-            surveys,
-            admins,
-            users
+            cards, surveys, admins, users, charts
         };
 
     }

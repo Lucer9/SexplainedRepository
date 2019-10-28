@@ -32,11 +32,13 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ShopItemComponent } from './shop-item/shop-item.component';
+import { FormChartComponent } from './form-chart/form-chart.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfigComponent } from './config/config.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ChartComponent } from './chart/chart.component';
 
 import { ModuleEditComponent } from './module-edit/module-edit.component';
 import { ModuleAddComponent } from './module-add/module-add.component';
@@ -65,7 +67,9 @@ import { ModuleAddComponent } from './module-add/module-add.component';
     ShopItemComponent,
     AdminHomeComponent,
     ModuleEditComponent,
-    ModuleAddComponent
+    ModuleAddComponent,
+    FormChartComponent,
+    ChartComponent,
   ],
     imports: [
     BrowserModule,
@@ -82,7 +86,6 @@ import { ModuleAddComponent } from './module-add/module-add.component';
                 deps: [HttpClient]
             }
         }),
-        BrowserAnimationsModule
     ],
 
     providers: [],

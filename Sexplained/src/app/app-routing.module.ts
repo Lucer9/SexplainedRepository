@@ -13,6 +13,7 @@ import { ModuleComponent } from './module/module.component';
 import { ModuleEditComponent } from './module-edit/module-edit.component'; 
 import { ModuleAddComponent } from './module-add/module-add.component'; 
 import { SurveyComponent } from './survey/survey.component'; 
+import { FormChartComponent } from './form-chart/form-chart.component';
 import { AdminComponent } from './admin/admin.component'; 
 import { ConfigComponent } from './config/config.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'; 
@@ -60,6 +61,10 @@ const routes: Routes = [
         component: ConfigComponent
     },
     {
+    },{
+        path: 'graficas',
+        component: FormChartComponent
+    },{
         path: '',
         component: LoginComponent
     },{
