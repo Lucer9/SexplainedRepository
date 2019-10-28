@@ -15,6 +15,7 @@ import { ModuleAddComponent } from './module-add/module-add.component';
 import { SurveyComponent } from './survey/survey.component'; 
 import { FormChartComponent } from './form-chart/form-chart.component';
 import { AdminComponent } from './admin/admin.component'; 
+import { ConfigComponent } from './config/config.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'; 
 
 const routes: Routes = [
@@ -54,6 +55,12 @@ const routes: Routes = [
     },{
         path: 'registroExperto',
         component: SingupExpertComponent
+    },
+    {
+        path:'settings',
+        component: ConfigComponent
+    },
+    {
     },{
         path: 'graficas',
         component: FormChartComponent
