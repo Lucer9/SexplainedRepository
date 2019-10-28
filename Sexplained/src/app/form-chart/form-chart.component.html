@@ -1,0 +1,13 @@
+<app-sidemenu cart={{cart}} activeTab="/encuestas"></app-sidemenu>
+<div class="home">
+	<div class="container">
+		<img class="logo" src="assets/sexplained.svg" alt="">
+		<div class="row">
+			<div class="row justify-content-start">
+		            <div class="chart-container col col-lg-10 col-md-12 text-center" *ngFor="let chart of charts">
+		              <app-chart class="chartInstance" id="canvas {{chart.id}}" title="{{chart.title}}" atributo="{{chart.atributo}}"></app-chart>
+		            </div>
+	        </div>
+	    </div>
+	</div>
+</div>

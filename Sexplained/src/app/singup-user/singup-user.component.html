@@ -6,22 +6,22 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-12" id="logIn">
-            <form>
+            <form #formulario ="ngForm" (ngSubmit)="enviarFormulario()">
                 <div class="form-group">
-                    <label for="correoLog" class="whiteText">Correo</label>
-                    <input type="email" class="form-control" id="correoLog" placeholder="Ingresa tu correo">
+                    <label for="mail" class="whiteText">Correo</label>
+                    <input type="email" class="form-control" name="mail" id="mail" placeholder="Ingresa tu correo" [(ngModel)]="usuario.mail">
                 </div>
                 <div class="form-group">
-                    <label for="passwordLog" class="whiteText">Contraseña</label>
-                    <input type="password" class="form-control" id="passwordLog" placeholder="Ingresa tu contraseña">
+                    <label for="password" class="whiteText">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" [(ngModel)]="usuario.password">
                 </div>
                 <div class="form-group">
-                    <label for="passwordRegRep" class="whiteText">Repetir Contraseña</label>
-                    <input type="password" class="form-control" id="passwordRegRep" placeholder="Ingresa tu contraseña">
+                    <label for="passwordCheck" class="whiteText">Repetir Contraseña</label>
+                    <input type="password" class="form-control" id="passwordCheck" name="passwordCheck" placeholder="Ingresa tu contraseña" [(ngModel)]="passwordcheck.check">
                 </div>
-                <a href="/">
-                    <div class="btn btn-primary centered logInBtn"><b>Ingresar</b></div>
-                </a>
+                    <div class="centerText" id="passCheckLabel">    Las contraseñas no son iguales.
+                    </div>
+                    <input type="submit" class="btn btn-primary centered logInBtn" value="Registrarse">
             </form>
         </div>
     </div>
