@@ -27,5 +27,17 @@
         "cancelar": "Cancelar",
         "aceptar": "Aceptar",
         "title": "Eliminar producto"
+    },
+
+    "language":{
+        "english": "Inglés",
+        "spanish": "Español"
+    },
+
+    "config": {
+        "tittle" : "Configuración del sitio",
+        "language" : "Lenguage local:",
+        "mail" : "Cambiar correo electrónico",
+        "password" : "Cambiar contraseña"
     }
 }

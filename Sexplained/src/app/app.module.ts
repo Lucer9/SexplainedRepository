@@ -35,6 +35,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfigComponent } from './config/config.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SurveyComponent,
     UserComponent,
     AdminComponent,
-    ShopItemComponent
+    ShopItemComponent,
+    ConfigComponent
   ],
     imports: [
     BrowserModule,
