@@ -40,7 +40,8 @@ export class CarritoComponent implements OnInit {
                 console.log(this.cart[i])
                 this.cardService.getCard(this.cart[i]).subscribe((card) => {
                     this.cards.push(card)
-                    var c = card
+                    var c 
+                    c = card
                     this.totalPrice = c.price + this.totalPrice
                 });
 

@@ -22,6 +22,9 @@ export class CardComponent implements OnInit {
     @Input() authorName = "Nombre";
     @Input() authorAvatar = "https://i1.wp.com/ggrmlawfirm.com/wp-content/uploads/avatar-placeholder.png?fit=256%2C256&ssl=1";
 
+    @Input() userId;
+    @Input() isUser;
+
     @Output() valueChange = new EventEmitter();
     counter = 0;
 
@@ -30,19 +33,21 @@ export class CardComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userService.getUser(1).subscribe((user: any[]) => {
-            this.user = user
-            if (this.user.bought_modules.includes(+this.id)) {
-                this.price = 0;
-            }
+        if (this.isUser != '1') {
+            this.userService.getUser(this.userId).subscribe((user) => {
+                this.user = user
+                if (this.user.bought_modules.includes(+this.id)) {
+                    this.price = 0;
+                }
 
-            if (this.user.cart.includes(+this.id)) {
-                this.price = 0;
-                this.cart = true;;
-                this.counter = this.counter + 1;
-                this.valueChange.emit(this.counter);
-            }
-        });
+                if (this.user.cart.includes(+this.id)) {
+                    this.price = 0;
+                    this.cart = true;;
+                    this.counter = this.counter + 1;
+                    this.valueChange.emit(this.counter);
+                }
+            });
+        }
     }
 
 
@@ -52,25 +57,29 @@ export class CardComponent implements OnInit {
     }
 
     open(content) {
-        if (this.price > 0) {
-            this.modalService.open(content, {
-                ariaLabelledBy: 'modal-basic-title'
-            }).result.then((result) => {
-                this.closeResult = `Closed with: ${result}`;
-            }, (reason) => {
-                this.closeResult = this.getDismissReason(reason);
-                if (this.closeResult == 'with: add') {
-                    this.addProduct();
-                } else if (this.closeResult == 'with: buy') {
-                    console.log("buy")
-                }
-            });
+        if (this.isUser == '0') {
+            window.open("edit/modulos/" + this.id , '_blank');
         } else {
-            if (!this.cart) {
-                if (this.people != '') {
-                    window.open("encuestas/" + this.id, '_blank');
-                } else {
-                    window.open("modulos/" + this.id, '_blank');
+            if (this.price > 0) {
+                this.modalService.open(content, {
+                    ariaLabelledBy: 'modal-basic-title'
+                }).result.then((result) => {
+                    this.closeResult = `Closed with: ${result}`;
+                }, (reason) => {
+                    this.closeResult = this.getDismissReason(reason);
+                    if (this.closeResult == 'with: add') {
+                        this.addProduct();
+                    } else if (this.closeResult == 'with: buy') {
+                        console.log("buy")
+                    }
+                });
+            } else {
+                if (!this.cart) {
+                    if (this.people != '') {
+                        window.open("encuestas/" + this.id, '_blank');
+                    } else {
+                        window.open("modulos/" + this.id, '_blank');
+                    }
                 }
             }
         }

@@ -35,6 +35,10 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+
+import { ModuleEditComponent } from './module-edit/module-edit.component';
+import { ModuleAddComponent } from './module-add/module-add.component';
 
 
 @NgModule({
@@ -55,7 +59,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SurveyComponent,
     UserComponent,
     AdminComponent,
-    ShopItemComponent
+    ShopItemComponent,
+    AdminHomeComponent,
+    ModuleEditComponent,
+    ModuleAddComponent
   ],
     imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div id="menu">
-    <div>
+    <div *ngIf="isUser==1">
         <a href="/modulos">
             <div class="block" [ngClass]="{'selected': activeTab == '/modulos'}">
                 <i class="fa white fa-book"></i>
@@ -27,9 +27,30 @@
                 <p class="white">{{ 'menu.ajustes' | translate }}</p>
             </div>
         </a>
+    </div>
+    
+    
+    <div *ngIf="isUser==0">
+        <a href="/adminhome">
+            <div class="block" [ngClass]="{'selected': activeTab == '/adminhome'}">
+                <i class="fa white fa-home"></i>
+                <p class="white">Home</p>
+            </div>
+        </a>
 
+        <a href="/graphs">
+            <div class="block" [ngClass]="{'selected': activeTab== '/graphs'}">
+                <i class="fa white fa-chart-bar"></i>
+                <p class="white">{{ 'menu.reportes' | translate }}</p>
+            </div>
+        </a>
 
-
+        <a href="/settingsAdmin">
+            <div class="block" [ngClass]="{'selected': activeTab== '/settingsAdmin'}">
+                <i class="fa white fa-gear"></i>
+                <p class="white">{{ 'menu.ajustes' | translate }}</p>
+            </div>
+        </a>
     </div>
     <a href="/">
         <div class="block last">

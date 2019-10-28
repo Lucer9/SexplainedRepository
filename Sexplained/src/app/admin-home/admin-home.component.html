@@ -1,4 +1,4 @@
-<app-sidemenu cart={{cart}} activeTab="/modulos"></app-sidemenu>
+<app-sidemenu isUser="0" activeTab="/adminhome"></app-sidemenu>
 <div class="home">
     <div class="container">
         <img class="logo" src="assets/sexplained.svg" alt="">
@@ -6,8 +6,9 @@
 
         <div class="row justify-content-start">
             <div class="card-container col col-lg-4 col-md-6 col-sm-12" *ngFor="let card of cards">
-                <app-card userId="1" (valueChange)='displayCounter($event)' id="{{card.id}}" banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" date="{{card.date}}" authorId="{{card.author.id}}" authorName="{{card.author.name}}" authorAvatar="{{card.author.avatar}}" price="{{card.price}}"></app-card>
+                <app-card userId={{id}} isUser='0' id="{{card.id}}" banner="{{card.banner}}" title="{{card.title}}" text="{{card.text}}" date="{{card.date}}" authorId="{{card.author.id}}" authorName="{{card.author.name}}" authorAvatar="{{card.author.avatar}}" price="{{card.price}}"></app-card>
             </div>
         </div>
     </div>
+    <a class="add" href="modulos/add"><i class="fa fa-plus"></i></a>
 </div>
