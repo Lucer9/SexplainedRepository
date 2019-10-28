@@ -31,5 +31,17 @@
         "cancelar": "Cancel",
         "aceptar": "Accept",
         "title": "Remove Product"
+    },
+
+    "language": {
+        "english": "English",
+        "spanish": "Spanish"
+    },
+
+    "config": {
+        "tittle" : "Site Configuration",
+        "language" : "Local language:",
+        "mail" : "Change email",
+        "password" : "Change password"
     }
 }

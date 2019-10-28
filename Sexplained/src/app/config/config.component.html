@@ -1,0 +1,27 @@
+<app-sidemenu cart={{cart}} activeTab="/settings"></app-sidemenu>
+<div class="home">
+    <div class="container">
+        <img class="logo" src="assets/sexplained.svg" alt="">
+
+        <div class="row justify-content-start">
+            <div class="card-container col col-lg-12 col-md-12 col-sm-12">
+                <h2>{{'config.tittle' | translate}}</h2>
+                <p>{{'config.language' | translate}}</p>
+                <button class='btn btn-info' (click)="cambiarLenguaje('en')" [ngClass]="{'btn btn-outline-dark':lenguaje == 'en'}">{{'language.english' | translate}}</button>
+                <button class='btn btn-info' (click)="cambiarLenguaje('es')" [ngClass]="{'btn btn-outline-dark':lenguaje == 'es'}">{{'language.spanish' | translate}}</button>
+                
+                <form #formulario = "ngForm" (ngSubmit) = "enviarFormulario(formulario.value)">
+                    <div class="form-group">
+                        <p>{{'config.mail' | translate}}</p>
+                        <input type="text" class="form-control" id="mail" placeholder="ex@mail.com" name="mail">
+                        <p>{{'config.password' | translate}}</p>
+                        <input type="text" class="form-control" id="password" placeholder="password" name="password">
+                        <br>
+                        <input type="submit" value="submit">
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
