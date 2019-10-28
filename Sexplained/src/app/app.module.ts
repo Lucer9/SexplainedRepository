@@ -63,7 +63,7 @@ import { ModuleAddComponent } from './module-add/module-add.component';
     UserComponent,
     AdminComponent,
     ShopItemComponent,
-    ConfigComponent
+    ConfigComponent,
     ShopItemComponent,
     AdminHomeComponent,
     ModuleEditComponent,

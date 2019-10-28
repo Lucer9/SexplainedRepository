@@ -59,8 +59,6 @@ const routes: Routes = [
     {
         path:'settings',
         component: ConfigComponent
-    },
-    {
     },{
         path: 'graficas',
         component: FormChartComponent
