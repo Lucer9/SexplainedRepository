@@ -1,0 +1,20 @@
+@import '../../styles.scss';
+.card-container{
+    margin: 20px 0;
+}
+
+.add{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: $pink;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 53px;
+    color: white !important;
+    text-align: center;
+    border: none;
+    @include shadow;
+    z-index: 99;
+}

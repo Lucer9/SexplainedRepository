@@ -22,7 +22,7 @@ export class DataService implements InMemoryDbService {
         }]
 
         let admins = [{
-            'id': "1",
+            'id': "11",
             'name': "Dr. Harold",
             'modules': [1],
             'surveys': [1],
@@ -34,7 +34,7 @@ export class DataService implements InMemoryDbService {
             'banner': "https://i.kym-cdn.com/photos/images/newsfeed/000/839/199/8a9.jpg"
 
         }, {
-            'id': "2",
+            'id': "12",
             'name': "Dra. Martinez",
             'modules': [2, 4],
             'surveys': [],
@@ -46,7 +46,7 @@ export class DataService implements InMemoryDbService {
             'banner': "https://i.ytimg.com/vi/K6LA7v1PApU/maxresdefault.jpg"
 
         }, {
-            'id': "3",
+            'id': "13",
             'name': "Dr. Antonio",
             'modules': [3, 5, 6],
             'surveys': [],

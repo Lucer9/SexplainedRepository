@@ -21,6 +21,7 @@ import {
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
     @Input() cart = 0;
+    @Input() isUser =  '1';
     user;
     menu;
     menuUser = [{

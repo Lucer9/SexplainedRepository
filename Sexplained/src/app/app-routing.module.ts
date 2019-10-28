@@ -10,9 +10,12 @@ import { CardComponent } from './card/card.component';
 import { SingupUserComponent } from './singup-user/singup-user.component';
 import { SingupExpertComponent } from './singup-expert/singup-expert.component';
 import { ModuleComponent } from './module/module.component'; 
+import { ModuleEditComponent } from './module-edit/module-edit.component'; 
+import { ModuleAddComponent } from './module-add/module-add.component'; 
 import { SurveyComponent } from './survey/survey.component'; 
 import { AdminComponent } from './admin/admin.component'; 
 import { ConfigComponent } from './config/config.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component'; 
 
 const routes: Routes = [
     {
@@ -28,11 +31,20 @@ const routes: Routes = [
         path: 'modulos/:id',
         component: ModuleComponent
     },{
+        path: 'edit/modulos/:id',
+        component: ModuleEditComponent
+    },{
+        path: 'add/modulos',
+        component: ModuleAddComponent
+    },{
         path: 'encuestas/:id',
         component: SurveyComponent
     },{
         path: 'autor/:id',
         component: AdminComponent
+    },{
+        path: 'adminHome',
+        component: AdminHomeComponent
     },{
         path: 'registro',
         component: SignupComponent
