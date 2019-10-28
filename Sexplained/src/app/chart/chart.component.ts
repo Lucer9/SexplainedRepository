@@ -24,25 +24,32 @@ export class ChartComponent implements OnInit {
 	myString = '';
 	@Input()atributo = "";
 	charts: any[] = [];
-  admins: any[] = [];
   adminId = 3;
-	chart = new Chart('canvas 1', {});
+  admin = {
+    'id': "",
+    'name': "",
+    'modules': [],
+    'surveys': [],
+    'avatar': "",
+    'info': "",
+      'phone': "",
+      'mail': "",
+      'password':"",
+      'banner':""
+  };
+	chart = new Chart('canvas', {});
 
   constructor(private httpClient: HttpClient, private chartService: ChartService, private adminService: AdminService) { }
 
   ngOnInit() {
   	this.chartService.getCharts().subscribe((charts: any[]) => {
             this.charts = charts;
-        });
-    this.adminService.getAdmins().subscribe((admins: any[]) => {
-            this.admins = admins;
-            console.log(this.admins);
-        });
-
-  	this.httpClient.get(this.url).subscribe((res: Data[]) => {
+        })
+    this.adminService.getAdmin(this.adminId).subscribe((admin: any[]) => {
+            this.admin = admin;
+            this.httpClient.get(this.url).subscribe((res: Data[]) => {
       res.forEach(y => {
-        console.log(this.admins.modules);
-        if(this.admins[2].modules.includes(y.numero)){
+        if(this.admin.modules.includes(y.numero)){
           this.nombres.push(y.nombre);
           eval('this.'+this.atributo+'.push(y.'+this.atributo+');');
         }
@@ -75,5 +82,8 @@ export class ChartComponent implements OnInit {
         }
       });
     });
+        })
+
+
   }
 }
