@@ -25,18 +25,7 @@ export class ChartComponent implements OnInit {
 	@Input()atributo = "";
 	charts: any[] = [];
   adminId = 3;
-  admin = {
-    'id': "",
-    'name': "",
-    'modules': [],
-    'surveys': [],
-    'avatar': "",
-    'info': "",
-      'phone': "",
-      'mail': "",
-      'password':"",
-      'banner':""
-  };
+  admin;
 	chart = new Chart('canvas', {});
 
   constructor(private httpClient: HttpClient, private chartService: ChartService, private adminService: AdminService) { }
