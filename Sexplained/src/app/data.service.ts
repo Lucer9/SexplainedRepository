@@ -95,7 +95,7 @@ export class DataService implements InMemoryDbService {
                     {'type':'title','data':'Capítulo 1'},
                     {'type':'text','data':'Hay muchos mitos que rodean los principales aspectos una relación sexual.'},                                    {'type':'list','data':["Punto 1","Punto 3","Punto 2"]},
                     {'type':'image','data':'http://s3.amazonaws.com/static.hivequal.org/files/photos/4931/images/large.jpg?1505243628'},
-                ]
+                ],
             },
             
             {
@@ -169,8 +169,26 @@ export class DataService implements InMemoryDbService {
             }
             ];
 
+        let charts = [
+            {
+                'id': "1",
+                'title': 'Visitas',
+                'atributo': 'visitas',
+            },
+            {
+                'id': "2",
+                'title': 'Compras',
+                'atributo': 'compras'
+            },
+            {
+                'id': "3",
+                'title': 'Ganancias',
+                'atributo': 'ganancias'
+            }
+        ]
+
         return {
-            cards, surveys, admins, users
+            cards, surveys, admins, users, charts
         };
 
     }

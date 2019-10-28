@@ -35,6 +35,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 import { FormChartComponent } from './form-chart/form-chart.component';
 
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ChartComponent } from './chart/chart.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
     UserComponent,
     AdminComponent,
     ShopItemComponent,
-    FormChartComponent
+    FormChartComponent,
+    ChartComponent
   ],
     imports: [
     BrowserModule,

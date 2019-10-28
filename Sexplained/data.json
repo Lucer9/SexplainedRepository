@@ -4,37 +4,49 @@
       "nombre": "¿Cómo poner un cóndon?",
       "visitas": 400,
       "compras": 0,
-      "ganancias": 0
+      "ganancias": 0,
+      "color": "#db0700",
+      "numero": 1
     },
     {
       "nombre": "Pastillas Anticonceptivas",
       "visitas": 530,
       "compras": 30,
-      "ganancias": 1500
+      "ganancias": 1500,
+      "color": "#05b55a",
+      "numero": 2
     },
     {
       "nombre": "Embarazo",
       "visitas": 760,
       "compras": 100,
-      "ganancias": 7500
+      "ganancias": 7500,
+      "color": "#2ee6f0",
+      "numero": 3
     },
     {
       "nombre": "¿El tamaño importa?",
       "visitas": 740,
       "compras": 0,
-      "ganancias": 0
+      "ganancias": 0,
+      "color": "#2461e3",
+      "numero": 4
     },
     {
       "nombre": "Con condón no se siente",
       "visitas": 200,
       "compras": 0,
-      "ganancias": 0
+      "ganancias": 0,
+      "color": "#720fdb",
+      "numero": 5
     },
     {
       "nombre": "'Acabar' afuera",
       "visitas": 100,
       "compras": 20,
-      "ganancias": 450
+      "ganancias": 450,
+      "color": "#f74367",
+      "numero": 6
     }
   ]
 }
