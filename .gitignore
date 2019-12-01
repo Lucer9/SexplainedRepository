@@ -7,6 +7,7 @@ bin-release/
 # Other files and folders
 node_modules/
 Sexplained/node_modules
+Sexplained_Backend/node_modules
 
 # Executables
 *.swf

@@ -1,0 +1,10 @@
+{
+  "name": "mongoDB",
+  "connector": "mongodb",
+  "url": "mongodb://admin:admin@cluster0-shard-00-00-87od2.mongodb.net:27017,cluster0-shard-00-01-87od2.mongodb.net:27017,cluster0-shard-00-02-87od2.mongodb.net:27017/Sexplained?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
+  "host": "cluster0-shard-00-00-87od2.mongodb.net",
+  "port": 27017,
+  "user": "admin",
+  "password": "admin",
+  "database": "sexplained",
+}
