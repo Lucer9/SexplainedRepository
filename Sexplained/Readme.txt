@@ -1,1 +1,1 @@
-Para que las forms reciban datos, se debe correr este comando desde la terminal en la carpeta base del proyecto: "json-server --watch data.json --port 4000"
+Para que las forms reciban datos correctamente, se debe correr este comando desde una terminal separada terminal en la carpeta base del proyecto: "json-server --watch data.json --port 4000"
