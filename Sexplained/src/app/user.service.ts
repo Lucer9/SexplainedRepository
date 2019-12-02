@@ -12,7 +12,7 @@ import {
 })
 export class UserService {
 
-    SERVER_URL: string = "http://localhost:8080/api/";
+    SERVER_URL: string = "http://localhost:3000/";
     constructor(private httpClient: HttpClient) {}
 
     public getUsers() {

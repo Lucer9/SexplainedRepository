@@ -8,6 +8,10 @@
         <div class="col-lg-6 col-md-8 col-sm-12" id="logIn">
             <form #formulario ="ngForm" (ngSubmit)="enviarFormulario()">
                 <div class="form-group">
+                    <label for="mail" class="whiteText">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Ingresa tu nombre" [(ngModel)]="usuario.name">
+                </div>
+                <div class="form-group">
                     <label for="mail" class="whiteText">Correo</label>
                     <input type="email" class="form-control" name="mail" id="mail" placeholder="Ingresa tu correo" [(ngModel)]="usuario.mail">
                 </div>
@@ -19,8 +23,7 @@
                     <label for="passwordCheck" class="whiteText">Repetir Contraseña</label>
                     <input type="password" class="form-control" id="passwordCheck" name="passwordCheck" placeholder="Ingresa tu contraseña" [(ngModel)]="passwordcheck.check">
                 </div>
-                    <div class="centerText" id="passCheckLabel">    Las contraseñas no son iguales.
-                    </div>
+                <div class="centerText" id="passCheckLabel">{{error}}</div>
                     <input type="submit" class="btn btn-primary centered logInBtn" value="Registrarse">
             </form>
         </div>
