@@ -1,0 +1,14 @@
+import { Entity } from '@loopback/repository';
+export declare class Survey extends Entity {
+    id?: string;
+    title: string;
+    date: string;
+    banner: string;
+    authorId: string;
+    people: number;
+    content: object;
+    constructor(data?: Partial<Survey>);
+}
+export interface SurveyRelations {
+}
+export declare type SurveyWithRelations = Survey & SurveyRelations;
