@@ -9,18 +9,22 @@
                 <p>{{'config.language' | translate}}</p>
                 <button class='btn btn-info' (click)="cambiarLenguaje('en')" [ngClass]="{'btn btn-outline-dark':lenguaje == 'en'}">{{'language.english' | translate}}</button>
                 <button class='btn btn-info' (click)="cambiarLenguaje('es')" [ngClass]="{'btn btn-outline-dark':lenguaje == 'es'}">{{'language.spanish' | translate}}</button>
-                
-                <form #formulario = "ngForm" (ngSubmit) = "enviarFormulario(formulario.value)">
+
+                <form #formulario="ngForm" (ngSubmit)="enviarFormulario()">
                     <div class="form-group">
                         <p>{{'config.mail' | translate}}</p>
-                        <input type="text" class="form-control" id="mail" placeholder="ex@mail.com" name="mail">
+                        <input [(ngModel)]="author.mail" type="text" class="form-control" id="mail" placeholder="ex@mail.com" name="mail">
                         <p>{{'config.password' | translate}}</p>
-                        <input type="text" class="form-control" id="password" placeholder="password" name="password">
+                        <input type="text" author.password class="form-control" id="password" placeholder="password" name="password">
                         <br>
+                        <div *ngIf="!complete" class="tt">
+                            <p>{{error}}</p>
+                        </div>
                         <input type="submit" value="submit">
+                        
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>

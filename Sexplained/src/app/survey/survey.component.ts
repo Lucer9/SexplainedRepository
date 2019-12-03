@@ -32,6 +32,7 @@ export class SurveyComponent implements OnInit {
 
     ngOnInit() {
         this.surveyService.getSurvey(this.id).subscribe((survey: any[]) => {
+            console.log(survey)
             //@ts-ignore
             var myEl = angular.element(document.querySelector('.content'));
             this.survey = survey;
@@ -45,8 +46,7 @@ export class SurveyComponent implements OnInit {
                                     <div class="form-group" style='margin-top:20px;'>
                                     <label style='font-weight:600;' for="${pregunta}">${pregunta}</label>
                                     <textarea class="form-control" id="${pregunta}" placeholder="${data}" rows="3"></textarea>
-                                    </div>`
-                                   );
+                                    </div>`);
                         break;
 
                     case 'checkbox':
@@ -61,7 +61,7 @@ export class SurveyComponent implements OnInit {
                                     </div>`);
                         }
                         break;
-                        
+
                     case 'radio':
                         myEl.append("<label style='font-weight:600; margin-top:20px;'>" + pregunta + "</label>");
                         for (var j = 0; j < data.length; j++) {
@@ -74,18 +74,29 @@ export class SurveyComponent implements OnInit {
                                     </div>`);
                         }
                         break;
-                        
+
                     case 'textarea':
                         myEl.append(`
                                     <div class="form-group" style='margin-top:20px;'>
                                     <label style='font-weight:600;' for="${pregunta}">${pregunta}</label>
                                     <textarea class="form-control" id="${pregunta}" placeholder="${data}" rows="3"></textarea>
-                                    </div>`
-                                   );
+                                    </div>`);
                         break;
                 }
-            }            myEl.append('<button style="background-color: #D50069; border:none; cursor:pointer;" type="submit" class="btn btn-primary">Submit</button>')
+            }
+            myEl.append('<button style="background-color: #D50069; border:none; cursor:pointer;" type="submit" class="btn btn-primary">Submit</button>')
 
+        })
+    }
+
+    enviarFormulario() {
+        var p = this.survey.people+1
+        var nSurvey={
+            id:this.survey.id,
+            people:p
+        }
+        this.surveyService.updateSurvey(nSurvey).subscribe((res) => {
+            console.log(res)
         })
     }
 }

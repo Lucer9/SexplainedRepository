@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
     constructor(private cardService: CardService) {}
 
     ngOnInit() {
+        
         this.cardService.getCards().subscribe((cards: any[]) => {
             this.cards = cards;
             this.tempCards = cards;

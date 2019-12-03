@@ -2,7 +2,6 @@ import { Component, OnInit ,HostListener} from '@angular/core';
 import { CardService } from '../card.service';
 import { UserService } from '../user.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
 @Component({
     selector: 'app-carrito',
     templateUrl: './carrito.component.html',
@@ -32,7 +31,7 @@ export class CarritoComponent implements OnInit {
             this.paymentOpen = true
             this.side = "-35vw"
         }
-        this.userService.getUser(1).subscribe((user: any[]) => {
+        this.userService.getUser(localStorage.getItem('token')).subscribe((user: any[]) => {
             this.user = user;
             this.cart = this.user.cart;
             this.size = this.cart.length;
@@ -40,7 +39,7 @@ export class CarritoComponent implements OnInit {
                 console.log(this.cart[i])
                 this.cardService.getCard(this.cart[i]).subscribe((card) => {
                     this.cards.push(card)
-                    var c 
+                    var c
                     c = card
                     this.totalPrice = c.price + this.totalPrice
                 });
@@ -71,13 +70,16 @@ export class CarritoComponent implements OnInit {
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
             console.log(this.closeResult);
-            if (reason== "remove") {
-                this.cardService.deleteCard(card.id);
+            if (reason == "remove") {
                 this.cards = this.cards.filter(function (e) {
                     return e.id !== card.id;
                 });
                 this.size--;
                 this.totalPrice -= card.price
+                this.user.cart = this.cards
+                console.log(this.user.cart)
+                this.userService.updateUser(this.user).subscribe((user: any[]) => {});
+
             }
         });
     }
@@ -93,7 +95,7 @@ export class CarritoComponent implements OnInit {
     }
 
     toggle() {
-        if (this.innerWidth<=950) {
+        if (this.innerWidth <= 950) {
             this.paymentOpen = !this.paymentOpen
         }
     }

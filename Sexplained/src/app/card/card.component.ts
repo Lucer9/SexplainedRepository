@@ -33,9 +33,11 @@ export class CardComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.userId=localStorage.getItem('token')
         if (this.isUser != '1') {
             this.userService.getUser(this.userId).subscribe((user) => {
                 this.user = user
+                console.log(user)
                 if (this.user.bought_modules.includes(+this.id)) {
                     this.price = 0;
                 }
@@ -76,6 +78,8 @@ export class CardComponent implements OnInit {
                         this.addProduct();
                     } else if (this.closeResult == 'with: buy') {
                         console.log("buy")
+                        this.addProduct();
+                        location.replace("http://localhost:4200/carrito");
                     }
                 });
             } else {
