@@ -7,6 +7,7 @@ export declare class Module extends Entity {
     banner: string;
     author: object;
     price: number;
+    sales: number;
     content?: object[];
     constructor(data?: Partial<Module>);
 }

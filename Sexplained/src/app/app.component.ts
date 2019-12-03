@@ -13,3 +13,4 @@ export class AppComponent {
         translate.setDefaultLang('en');
     }
 }
+

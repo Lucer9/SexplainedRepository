@@ -1326,8 +1326,8 @@
         "signature": "b70d89f93a5952f72a1e7bf6319aa1dab6e2ae0bc108992361d4ede94bf9141d"
       },
       "./src/models/module.model.ts": {
-        "version": "f5ad26f042d571cefc5b53b285dd0db09470fb05f0a62cc542b43897f8897dd9",
-        "signature": "5d06a93e32169970e73baf274bb1d299297f7bf7cfef33dc937e5c1dcbe9e02b"
+        "version": "26486dbcf7a2ab388a6e51322f66b44eac677ea89cd1834f5f32f0e1f851cace",
+        "signature": "713e228d16c85cc73abeb9f5f97cffe2a15c454fd9c9eb77da72fd1ae57fbb58"
       },
       "./src/models/chart.model.ts": {
         "version": "e42cdb08f71bc207703d97406b819b33f074094697bc77394dd23796d61f1d87",
@@ -6420,7 +6420,7 @@
       "./src/controllers/ping.controller.ts",
       "./src/models/prueba.model.ts",
       "./src/models/user.model.ts",
-      "./src/models/module.model.ts",
+      "./src/models/survey.model.ts",
       "./src/models/chart.model.ts",
       "./src/datasources/mongo-db.datasource.config.json",
       "./src/datasources/mongo-db.datasource.ts",
@@ -6433,7 +6433,7 @@
       "./node_modules/@types/mocha/index.d.ts",
       "./node_modules/@types/on-finished/index.d.ts",
       "./node_modules/@types/type-is/index.d.ts",
-      "./src/models/survey.model.ts",
+      "./src/models/module.model.ts",
       "./src/models/index.ts",
       "./src/repositories/prueba.repository.ts",
       "./src/repositories/user.repository.ts",

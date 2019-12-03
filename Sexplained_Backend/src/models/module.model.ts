@@ -47,6 +47,13 @@ export class Module extends Entity {
   price: number;
 
   @property({
+    type: 'number',
+    required: true,
+    default: 0,
+  })
+  sales: number;
+
+  @property({
     type: 'array',
     itemType: 'object',
     required: true,

@@ -11,10 +11,14 @@ h4 {
     margin-left: 5%;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: .3; /* Firefox */
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: .3;
+    /* Firefox */
 }
+
 .form-label {
     position: relative;
     width: 80%;
@@ -25,7 +29,7 @@ h4 {
     label {
         position: absolute;
         top: -12px;
-        opacity: .7 ;
+        opacity: .7;
         width: 100%;
 
     }
@@ -89,8 +93,7 @@ h4 {
 }
 
 .price {
-    width: 50vw;
-    max-width: 960px;
+    width: 85vw;
     padding: 10px;
 
     p {

@@ -20,17 +20,18 @@ export class CarritoComponent implements OnInit {
     cart;
     size;
     cards = [];
+    date = ""
+    card = {
+        "number": "4242424242424242",
+        "name": "Nombre Usuario",
+        "exp_year": "2020",
+        "exp_month": "12",
+        "cvc": "123",
+    }
     constructor(private modalService: NgbModal, private userService: UserService, private cardService: CardService) {}
 
     ngOnInit() {
-        this.innerWidth = window.innerWidth;
-        if (innerWidth <= 950) {
-            this.paymentOpen = false
-            this.side = "-75vw"
-        } else {
-            this.paymentOpen = true
-            this.side = "-35vw"
-        }
+        this.loadStripe();
         this.userService.getUser(localStorage.getItem('token')).subscribe((user: any[]) => {
             this.user = user;
             this.cart = this.user.cart;
@@ -48,17 +49,6 @@ export class CarritoComponent implements OnInit {
         });
     }
 
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
-        this.innerWidth = window.innerWidth;
-        if (innerWidth <= 950) {
-            this.paymentOpen = false
-            this.side = "-75vw"
-        } else {
-            this.paymentOpen = true
-            this.side = "-35vw"
-        }
-    }
 
     open(content, card) {
         this.currentId = card.id;
@@ -97,6 +87,69 @@ export class CarritoComponent implements OnInit {
     toggle() {
         if (this.innerWidth <= 950) {
             this.paymentOpen = !this.paymentOpen
+        }
+    }
+
+
+
+    pay() {
+        var amount = this.totalPrice
+        var cards = this.cards
+        var card = this.cardService
+        var user = this.userService
+        var myUser = this.user
+        var handler = ( < any > window).StripeCheckout.configure({
+            key: 'pk_test_fS8v5RNY9nOp4biiV60i1WkJ000jX1HOYC',
+            locale: 'auto',
+            token: function (token: any) {
+                // You can access the token ID with `token.id`.
+                // Get the token ID to your server-side code for use.
+                console.log(cards)
+                console.log(myUser)
+                for (var i = 0; i < cards.length; i++) {
+                    cards[i].sales=cards[i].sales+cards[i].price
+                    card.updateCard(cards[i]).subscribe((res: any[]) => {
+                        console.log(res)                        
+                    });
+                }
+                
+                myUser.bought_modules=myUser.cart
+                myUser.cart=[]
+                user.updateUser(myUser).subscribe((res: any[]) => {
+                    console.log(res)
+                    location.replace("http://localhost:4200/modulos");
+                });
+
+            }
+        });
+
+        handler.open({
+            name: 'Sexplained',
+            amount: amount * 100,
+
+        });
+    }
+
+    loadStripe() {
+        if (!window.document.getElementById('stripe-script')) {
+            var s = window.document.createElement("script");
+            s.id = "stripe-script";
+            s.type = "text/javascript";
+            s.src = "https://checkout.stripe.com/checkout.js";
+            s.onload = () => {
+                //@ts-ignore
+                this.handler = ( < any > window).StripeCheckout.configure({
+                    key: 'pk_test_fS8v5RNY9nOp4biiV60i1WkJ000jX1HOYC',
+                    locale: 'auto',
+                    token: function (token: any) {
+                        // You can access the token ID with `token.id`.
+                        // Get the token ID to your server-side code for use.
+                        console.log(token)
+                    }
+                });
+            }
+
+            window.document.body.appendChild(s);
         }
     }
 }

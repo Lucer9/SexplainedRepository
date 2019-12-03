@@ -12,14 +12,15 @@ export class DashboardComponent implements OnInit {
     cards: any[] = [];
     tempCards: any[] = [];
     results = []
-    
+    userId=""
     @Input() cart=0;
 
     searcher = ""
     constructor(private cardService: CardService) {}
 
     ngOnInit() {
-        
+        this.userId = (localStorage.getItem('token'));
+        console.log(this.userId)
         this.cardService.getCards().subscribe((cards: any[]) => {
             this.cards = cards;
             this.tempCards = cards;

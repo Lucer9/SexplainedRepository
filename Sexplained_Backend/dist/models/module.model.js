@@ -68,6 +68,14 @@ __decorate([
 ], Module.prototype, "price", void 0);
 __decorate([
     repository_1.property({
+        type: 'number',
+        required: true,
+        default: 0,
+    }),
+    __metadata("design:type", Number)
+], Module.prototype, "sales", void 0);
+__decorate([
+    repository_1.property({
         type: 'array',
         itemType: 'object',
         required: true,

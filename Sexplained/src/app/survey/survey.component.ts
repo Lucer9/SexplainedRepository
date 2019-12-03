@@ -97,6 +97,7 @@ export class SurveyComponent implements OnInit {
         }
         this.surveyService.updateSurvey(nSurvey).subscribe((res) => {
             console.log(res)
+            location.replace("http://localhost:4200/modulos");
         })
     }
 }

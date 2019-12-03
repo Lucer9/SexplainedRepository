@@ -37,12 +37,12 @@ export class CardComponent implements OnInit {
         if (this.isUser != '1') {
             this.userService.getUser(this.userId).subscribe((user) => {
                 this.user = user
-                console.log(user)
-                if (this.user.bought_modules.includes(+this.id)) {
+                console.log(this.id)
+                if (this.user.bought_modules.includes(this.id)) {
                     this.price = 0;
                 }
 
-                if (this.user.cart.includes(+this.id)) {
+                if (this.user.cart.includes(this.id)) {
                     this.price = 0;
                     this.cart = true;;
                     this.counter = this.counter + 1;
