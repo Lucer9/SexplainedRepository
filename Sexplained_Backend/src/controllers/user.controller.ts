@@ -17,6 +17,13 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
+import {
+  authenticate,
+  UserProfile,
+  AuthenticationBindings,
+  TokenService,
+  UserService,
+} from '@loopback/authentication';
 import {User} from '../models';
 import {UserRepository} from '../repositories';
 
@@ -104,6 +111,7 @@ export class UserController {
     return this.userRepository.updateAll(user, where);
   }
 
+@authenticate('jwt')
   @get('/users/{id}', {
     responses: {
       '200': {

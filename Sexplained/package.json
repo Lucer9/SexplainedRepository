@@ -22,6 +22,7 @@
     "@angular/router": "~8.2.9",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@loopback/authentication": "^3.2.3",
     "@ng-bootstrap/ng-bootstrap": "^5.1.1",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
