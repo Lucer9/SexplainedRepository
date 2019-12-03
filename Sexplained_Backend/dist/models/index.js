@@ -8,4 +8,6 @@ __export(require("./user.model"));
 __export(require("./survey.model"));
 __export(require("./module.model"));
 __export(require("./chart.model"));
+__export(require("./frase.model"));
+__export(require("./frases-eng.model"));
 //# sourceMappingURL=index.js.map

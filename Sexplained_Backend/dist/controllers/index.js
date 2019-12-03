@@ -8,4 +8,6 @@ __export(require("./prueba.controller"));
 __export(require("./user.controller"));
 __export(require("./surveys.controller"));
 __export(require("./modules.controller"));
+__export(require("./frase.controller"));
+__export(require("./frase-eng.controller"));
 //# sourceMappingURL=index.js.map

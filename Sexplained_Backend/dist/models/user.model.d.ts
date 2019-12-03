@@ -13,6 +13,7 @@ export declare class User extends Entity {
     banner?: string;
     modules?: string[];
     surveys?: string[];
+    lenguaje?: string;
     constructor(data?: Partial<User>);
 }
 export interface UserRelations {

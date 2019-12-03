@@ -103,6 +103,12 @@ __decorate([
     }),
     __metadata("design:type", Array)
 ], User.prototype, "surveys", void 0);
+__decorate([
+    repository_1.property({
+        type: 'string'
+    }),
+    __metadata("design:type", String)
+], User.prototype, "lenguaje", void 0);
 User = __decorate([
     repository_1.model(),
     __metadata("design:paramtypes", [Object])

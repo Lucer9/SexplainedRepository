@@ -76,6 +76,11 @@ export class User extends Entity {
     itemType: 'string',
   })
   surveys?: string[];
+  
+@property({
+    type: 'string'
+  })
+  lenguaje?: string;
 
 
   constructor(data?: Partial<User>) {
