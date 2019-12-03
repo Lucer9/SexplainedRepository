@@ -32,9 +32,15 @@ __decorate([
 ], Survey.prototype, "title", void 0);
 __decorate([
     repository_1.property({
-        type: 'date',
+        type: 'string',
         required: true,
-        default: new Date,
+    }),
+    __metadata("design:type", String)
+], Survey.prototype, "text", void 0);
+__decorate([
+    repository_1.property({
+        type: 'string',
+        required: true,
     }),
     __metadata("design:type", String)
 ], Survey.prototype, "date", void 0);
@@ -62,10 +68,11 @@ __decorate([
 ], Survey.prototype, "people", void 0);
 __decorate([
     repository_1.property({
-        type: 'object',
+        type: 'array',
+        itemType: 'object',
         required: true,
     }),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], Survey.prototype, "content", void 0);
 Survey = __decorate([
     repository_1.model(),

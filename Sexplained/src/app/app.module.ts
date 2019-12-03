@@ -43,6 +43,9 @@ import { ChartComponent } from './chart/chart.component';
 import { ModuleEditComponent } from './module-edit/module-edit.component';
 import { ModuleAddComponent } from './module-add/module-add.component';
 
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { SurveyAddComponent } from './survey-add/survey-add.component';
+import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 
 @NgModule({
     declarations: [
@@ -70,8 +73,11 @@ import { ModuleAddComponent } from './module-add/module-add.component';
     ModuleAddComponent,
     FormChartComponent,
     ChartComponent,
+    SurveyAddComponent,
+    SurveyEditComponent,
   ],
     imports: [
+    StorageServiceModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

@@ -44,8 +44,9 @@ export class SurveyComponent implements OnInit {
                         myEl.append(`
                                     <div class="form-group" style='margin-top:20px;'>
                                     <label style='font-weight:600;' for="${pregunta}">${pregunta}</label>
-                                    <input class="form-control" id="${pregunta}" placeholder="${data}">
-                                    </div>`);
+                                    <textarea class="form-control" id="${pregunta}" placeholder="${data}" rows="3"></textarea>
+                                    </div>`
+                                   );
                         break;
 
                     case 'checkbox':

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ChartService {
 
-  SERVER_URL: string = "http://localhost:8080/api/";
+  SERVER_URL: string = "http://localhost:3000";
   constructor(private httpClient: HttpClient) { }
 
   public getCharts(){ 
@@ -24,7 +24,7 @@ export class ChartService {
       return this.httpClient.delete(`${this.SERVER_URL + 'charts'}/${chartId}`)
   }
   public updateChart(chart){
-      return this.httpClient.put(`${this.SERVER_URL + 'charts'}/${chart.id}`, chart)
+      return this.httpClient.patch(`${this.SERVER_URL + 'charts'}/${chart.id}`, chart)
   }
 
 }

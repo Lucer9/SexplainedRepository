@@ -15,9 +15,8 @@
         <div class="text">
             <div class="decoration"></div>
             <div class="content">
-                <p class="price" >Precio:</p>
-                <input class="price" type="number" min="0"  placeholder="Gratis" [(ngModel)]="price">
-                
+
+
                 <p>Descripción Corta</p>
                 <textarea [(ngModel)]="text" placeholder="Descripción"></textarea>
 
@@ -28,10 +27,9 @@
                     <div ngbDropdown class="d-inline-block">
                         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>+</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button ngbDropdownItem (click)="prepend('title',i)">Subtítulo</button>
-                            <button ngbDropdownItem (click)="prepend('text',i)">Texto</button>
-                            <button ngbDropdownItem (click)="prepend('list',i)">Lista</button>
-                            <button ngbDropdownItem (click)="prepend('image',i)">Imagen</button>
+                        <button ngbDropdownItem (click)="prepend('textarea',i)">Pregunta Abierta</button>
+                        <button ngbDropdownItem (click)="prepend('radio',i)">Pregunta Radial</button>
+                        <button ngbDropdownItem (click)="prepend('checkbox',i)">Pregunta Checkbox</button>
                         </div>
                     </div>
                     <input *ngIf="c.type=='title'" [(ngModel)]="content[i].data" placeholder="Ingresa un título">
@@ -51,10 +49,9 @@
                 <div ngbDropdown class="d-inline-block">
                     <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>+</button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="prepend('title',0)">Subtítulo</button>
-                        <button ngbDropdownItem (click)="prepend('text',0)">Texto</button>
-                        <button ngbDropdownItem (click)="prepend('list',0)">Lista</button>
-                        <button ngbDropdownItem (click)="prepend('image',0)">Imagen</button>
+                        <button ngbDropdownItem (click)="prepend('textarea',0)">Pregunta Abierta</button>
+                        <button ngbDropdownItem (click)="prepend('radio',0)">Pregunta Radial</button>
+                        <button ngbDropdownItem (click)="prepend('checkbox',0)">Pregunta Checkbox</button>
                     </div>
                 </div>
             </div>

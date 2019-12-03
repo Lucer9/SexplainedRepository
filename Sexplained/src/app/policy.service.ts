@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PolicyService {
 
-  SERVER_URL: string = "http://localhost:8080/api/";
+  SERVER_URL: string = "http://localhost:3000";
   constructor(private httpClient: HttpClient) { }
 
   public getPolicies(){ 
@@ -26,7 +26,7 @@ export class PolicyService {
       return this.httpClient.delete(`${this.SERVER_URL + 'policies'}/${policyId}`)
   }
   public updatePolicy(policy: {id: number, amount: number, clientId: number, userId: number, description: string}){
-      return this.httpClient.put(`${this.SERVER_URL + 'policies'}/${policy.id}`, policy)
+      return this.httpClient.patch(`${this.SERVER_URL + 'policies'}/${policy.id}`, policy)
   }
 
 }

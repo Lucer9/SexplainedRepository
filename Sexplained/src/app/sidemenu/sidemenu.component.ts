@@ -21,7 +21,7 @@ import {
 export class SidemenuComponent implements OnInit {
     @Input() activeTab;
     @Input() cart = 0;
-    @Input() isUser =  '1';
+    @Input() isUser = '1';
     user;
     menu;
     menuUser = [{
@@ -40,13 +40,15 @@ export class SidemenuComponent implements OnInit {
         ]
 
     constructor(private translate: TranslateService, private userService: UserService) {
-        this.userService.getUser(1).subscribe((user) => {
+        this.userService.getUser(localStorage.getItem('token')).subscribe((user) => {
             this.user = user
             this.translate.get('menu').subscribe((menu) => {
                 this.menuUser[0].text = menu.modulos;
                 this.menuUser[1].text = menu.encuestas;
             });
-            this.cart=this.user.cart.length
+            if (this.user.type == "user" ){
+                this.cart = this.user.cart.length
+            }
         })
     };
 

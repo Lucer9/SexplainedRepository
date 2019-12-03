@@ -2,11 +2,12 @@ import { Entity } from '@loopback/repository';
 export declare class Module extends Entity {
     id?: string;
     title: string;
+    text: string;
     date: string;
     banner: string;
-    authorId: string;
+    author: object;
     price: number;
-    content: object;
+    content?: object[];
     constructor(data?: Partial<Module>);
 }
 export interface ModuleRelations {

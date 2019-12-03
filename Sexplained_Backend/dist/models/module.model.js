@@ -32,9 +32,15 @@ __decorate([
 ], Module.prototype, "title", void 0);
 __decorate([
     repository_1.property({
-        type: 'date',
+        type: 'string',
         required: true,
-        default: new Date,
+    }),
+    __metadata("design:type", String)
+], Module.prototype, "text", void 0);
+__decorate([
+    repository_1.property({
+        type: 'string',
+        required: true,
     }),
     __metadata("design:type", String)
 ], Module.prototype, "date", void 0);
@@ -47,11 +53,11 @@ __decorate([
 ], Module.prototype, "banner", void 0);
 __decorate([
     repository_1.property({
-        type: 'string',
+        type: 'object',
         required: true,
     }),
-    __metadata("design:type", String)
-], Module.prototype, "authorId", void 0);
+    __metadata("design:type", Object)
+], Module.prototype, "author", void 0);
 __decorate([
     repository_1.property({
         type: 'number',
@@ -62,10 +68,11 @@ __decorate([
 ], Module.prototype, "price", void 0);
 __decorate([
     repository_1.property({
-        type: 'object',
+        type: 'array',
+        itemType: 'object',
         required: true,
     }),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], Module.prototype, "content", void 0);
 Module = __decorate([
     repository_1.model(),

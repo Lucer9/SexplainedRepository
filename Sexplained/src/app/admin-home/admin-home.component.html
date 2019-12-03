@@ -1,4 +1,4 @@
-<app-sidemenu isUser="0" activeTab="/adminhome"></app-sidemenu>
+<app-sidemenu isUser="0" activeTab="/adminHome"></app-sidemenu>
 <div class="home">
     <div class="container">
         <img class="logo" src="assets/sexplained.svg" alt="">
@@ -10,5 +10,11 @@
             </div>
         </div>
     </div>
-    <a class="add" href="modulos/add"><i class="fa fa-plus"></i></a>
+    <div class="menu-container">
+        <div class="hover-menu">
+            <a href="add/survey">{{ 'menu.encuestas' | translate }}</a>
+            <a href="add/modulos">{{ 'menu.modulos' | translate }}</a>
+        </div>
+        <a class="add"><i class="fa fa-plus"></i></a>
+    </div>
 </div>

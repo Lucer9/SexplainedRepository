@@ -3,7 +3,7 @@ import { Chart } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
 import { Data } from '../Data';
 import { ChartService } from '../chart.service';
-import { AdminService } from '../admin.service';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -28,13 +28,13 @@ export class ChartComponent implements OnInit {
   admin;
 	chart = new Chart('canvas', {});
 
-  constructor(private httpClient: HttpClient, private chartService: ChartService, private adminService: AdminService) { }
+  constructor(private httpClient: HttpClient, private chartService: ChartService, private userService: UserService) { }
 
   ngOnInit() {
   	this.chartService.getCharts().subscribe((charts: any[]) => {
             this.charts = charts;
         })
-    this.adminService.getAdmin(this.adminId).subscribe((admin: any[]) => {
+    this.userService.getUser(this.adminId).subscribe((admin: any[]) => {
             this.admin = admin;
             this.httpClient.get(this.url).subscribe((res: Data[]) => {
       res.forEach(y => {

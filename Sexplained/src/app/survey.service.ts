@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SurveyService {
 
-  SERVER_URL: string = "http://localhost:8080/api/";
+  SERVER_URL: string = "http://localhost:3000";
   constructor(private httpClient: HttpClient) { }
 
   public getSurveys(){ 
@@ -26,7 +26,7 @@ export class SurveyService {
       return this.httpClient.delete(`${this.SERVER_URL + 'surveys'}/${surveyId}`)
   }
   public updateSurvey(survey){
-      return this.httpClient.put(`${this.SERVER_URL + 'surveys'}/${survey.id}`, survey)
+      return this.httpClient.patch(`${this.SERVER_URL + 'surveys'}/${survey.id}`, survey)
   }
 
 }

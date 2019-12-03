@@ -30,7 +30,7 @@ export class UserService {
         return this.httpClient.delete(`${this.SERVER_URL + 'users'}/${userId}`)
     }
     public updateUser(user) {
-        return this.httpClient.put(`${this.SERVER_URL + 'users'}/${user.id}`, user)
+        return this.httpClient.patch(`${this.SERVER_URL + 'users'}/${user.id}`, user)
     }
 
 

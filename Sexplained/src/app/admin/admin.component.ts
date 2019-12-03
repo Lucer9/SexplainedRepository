@@ -11,8 +11,8 @@ import {
     HttpClient
 } from '@angular/common/http';
 import {
-    AdminService
-} from '../admin.service';
+    UserService
+} from '../user.service';
 
 import {
     CardService
@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
     cards = []
     sub;
 
-    constructor(private activateRoute: ActivatedRoute, private router: Router, private adminService: AdminService, private cardService: CardService, private surveyService: SurveyService) {
+    constructor(private activateRoute: ActivatedRoute, private router: Router, private userService: UserService, private cardService: CardService, private surveyService: SurveyService) {
         this.sub = this.activateRoute.paramMap.subscribe(params => {
             this.id = params.get('id');
         });
@@ -41,7 +41,7 @@ export class AdminComponent implements OnInit {
     ngOnInit() {
         //@ts-ignore
 
-        this.adminService.getAdmin(this.id).subscribe((admin: any[]) => {
+        this.userService.getUser(this.id).subscribe((admin: any[]) => {
             //@ts-ignore
             var myEl = angular.element(document.querySelector('.content'));
             this.admin = admin;

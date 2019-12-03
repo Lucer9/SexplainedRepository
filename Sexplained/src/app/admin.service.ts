@@ -6,16 +6,16 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class UserService {
 
-  SERVER_URL: string = "http://localhost:8080/api/";
+  SERVER_URL: string = "http://localhost:3000/";
   constructor(private httpClient: HttpClient) { }
 
-  public getAdmins(){ 
+  public getUsers(){ 
        return this.httpClient.get(this.SERVER_URL + 'admins');
   }
 
-  public getAdmin(adminId){
+  public getUser(adminId){
        return this.httpClient.get(`${this.SERVER_URL + 'admins'}/${adminId}`); 
   }
   public createAdmin(admin){
@@ -26,7 +26,7 @@ export class AdminService {
       return this.httpClient.delete(`${this.SERVER_URL + 'admins'}/${adminId}`)
   }
   public updateAdmin(admin){
-      return this.httpClient.put(`${this.SERVER_URL + 'admins'}/${admin.id}`, admin)
+      return this.httpClient.patch(`${this.SERVER_URL + 'admins'}/${admin.id}`, admin)
   }
 
 }

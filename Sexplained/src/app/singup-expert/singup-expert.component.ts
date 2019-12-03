@@ -14,7 +14,7 @@ export class SingupExpertComponent implements OnInit {
         "password": "",
         "type": "admin",
         "phone": "",
-        "avatar": "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCN14Xppovw4DgIAj81n0LMeKhv5pOpiFIQiHibskgPSoFkWm&s",
         "info": "",
         "banner": "https://images.pexels.com/photos/34090/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=750&w=1260",
         "modules": [],
@@ -41,6 +41,10 @@ export class SingupExpertComponent implements OnInit {
         if (this.admin.password == this.passwordcheck.check) {
             this.userService.createUser(this.admin).subscribe((ret) => {
                 console.log(ret);
+                //@ts-ignore
+                if(ret.id==""){}else{
+                    location.replace("http://localhost:4200/adminHome");
+                }
             });
             //this.router.navigate(['/']);
         } else {

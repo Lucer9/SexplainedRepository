@@ -11,7 +11,9 @@ import { SingupUserComponent } from './singup-user/singup-user.component';
 import { SingupExpertComponent } from './singup-expert/singup-expert.component';
 import { ModuleComponent } from './module/module.component'; 
 import { ModuleEditComponent } from './module-edit/module-edit.component'; 
-import { ModuleAddComponent } from './module-add/module-add.component'; 
+import { ModuleAddComponent } from './module-add/module-add.component';
+import { SurveyEditComponent } from './survey-edit/survey-edit.component'; 
+import { SurveyAddComponent } from './survey-add/survey-add.component'; 
 import { SurveyComponent } from './survey/survey.component'; 
 import { FormChartComponent } from './form-chart/form-chart.component';
 import { AdminComponent } from './admin/admin.component'; 
@@ -37,6 +39,12 @@ const routes: Routes = [
     },{
         path: 'add/modulos',
         component: ModuleAddComponent
+    },{
+        path: 'edit/survey/:id',
+        component: SurveyEditComponent
+    },{
+        path: 'add/survey',
+        component: SurveyAddComponent
     },{
         path: 'encuestas/:id',
         component: SurveyComponent

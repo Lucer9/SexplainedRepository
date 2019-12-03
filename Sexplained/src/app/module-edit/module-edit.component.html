@@ -1,4 +1,4 @@
-<app-sidemenu isUser="0" activeTab="/adminhome"></app-sidemenu>
+<app-sidemenu isUser="0" activeTab="/adminHome"></app-sidemenu>
 <div class="home">
     <div class="banner" [ngStyle]="{ 'background-image': 'url(' + card.banner + ')'}"></div>
     <div class="container">
@@ -14,8 +14,12 @@
         <div class="text">
             <div class="decoration"></div>
             <div class="content">
-                <p>Descripción (150 Caracteres)</p>
-                <textarea maxlength="150" [(ngModel)]=card.text  placeholder="Descripción"></textarea>
+                
+                <p class="price" >Precio:</p>
+                <input class="price" type="number" min="0"  placeholder="Gratis" [(ngModel)]="card.price">
+                
+                <p>Descripción Corta</p>
+                <textarea [(ngModel)]=card.text  placeholder="Descripción"></textarea>
 
                 <div *ngFor="let c of card.content; index as i" class="adder">
 
@@ -38,7 +42,7 @@
                     <input *ngIf="c.type=='image'" [(ngModel)]="card.content[i].data" placeholder="Pon el link de la imagen">
 
 
-                    <i class=" close fas fa-trash" (click)="open(modal,i)"></i>
+                    <i class=" close fa fa-trash" (click)="open(modal,i)"></i>
                 </div>
 
 
@@ -58,11 +62,14 @@
 
     </div>
 
+    <div *ngIf="!complete" class="tt">
+        <p>{{error}}</p>
+    </div>
     <a href="/" class="back">
         <p>{{ 'info.regresar' | translate}}</p>
     </a>
-    
-    <a href="/" class="save">
+
+    <a (click)="save()" class="save">
         <p>{{ 'info.salvar' | translate}}</p>
     </a>
 </div>

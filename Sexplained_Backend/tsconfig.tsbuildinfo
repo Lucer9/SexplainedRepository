@@ -1322,12 +1322,12 @@
         "signature": "412e82c290f726e8d411f00fd4d61f220cb6d32988e0e552d8b2f430f0ec81b2"
       },
       "./src/models/survey.model.ts": {
-        "version": "797e7fcfcbea42f93735097d545c81384f5bc073942aaf33fd5f33cf99b4cd80",
-        "signature": "025062a440fd15772db9db942881e5b500c91d9ac6279e637041962d936fe2d3"
+        "version": "051bdc76bb489bd247529c4ee8b84b00c3b00fc91e4e124aa4ae28a6ac01b3cf",
+        "signature": "429b28f75525b58ac50d8398987ff0f94766132fa23cc40cacd00d658af37df7"
       },
       "./src/models/module.model.ts": {
-        "version": "46f71dca17ff4b01b07103c2f4a259b4cdd8cd90a87b9587cc006c88b33fb651",
-        "signature": "75c300271e9c1510ca29d48db56eabebff1632c38fc0359549ad1d863a623d12"
+        "version": "f5ad26f042d571cefc5b53b285dd0db09470fb05f0a62cc542b43897f8897dd9",
+        "signature": "5d06a93e32169970e73baf274bb1d299297f7bf7cfef33dc937e5c1dcbe9e02b"
       },
       "./src/models/chart.model.ts": {
         "version": "e42cdb08f71bc207703d97406b819b33f074094697bc77394dd23796d61f1d87",
@@ -1365,9 +1365,13 @@
         "version": "0e34c7f5cc39eb717c8224baf3a6855944794d67394d0800002045690be3d049",
         "signature": "b520bfe08a42f99dc4f29a05e53762d716601b8d8bc0cbbfa69eff3ef76e104e"
       },
+      "./src/repositories/chart.repository.ts": {
+        "version": "4ee0aeeff100f469322226da1393ebdad8de0ec84fe2b3f47272587194309450",
+        "signature": "5932901ed948bedade0cf7cbe9e1db35142333c59690d85e08720320765f5424"
+      },
       "./src/repositories/index.ts": {
-        "version": "f1d59c463ab0d5c2059ebd5d0237b649eb883ef7e9a8e261e03ec2d2312c0428",
-        "signature": "f1d59c463ab0d5c2059ebd5d0237b649eb883ef7e9a8e261e03ec2d2312c0428"
+        "version": "a55d18f61b9f38e1c62c50ae7f9c55aa92a4c06ff77a59ebc3d9b7702a4d1fed",
+        "signature": "a55d18f61b9f38e1c62c50ae7f9c55aa92a4c06ff77a59ebc3d9b7702a4d1fed"
       },
       "./src/controllers/prueba.controller.ts": {
         "version": "08d9cb308c2ba007f447b2cfbcd5ea3c5795dfeec137f0534256024100c4f519",
@@ -3707,11 +3711,20 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./src/repositories/chart.repository.ts": [
+        "./node_modules/@loopback/repository/index.d.ts",
+        "./src/models/index.ts",
+        "./src/datasources/index.ts",
+        "./node_modules/@loopback/core/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/repositories/index.ts": [
         "./src/repositories/prueba.repository.ts",
         "./src/repositories/user.repository.ts",
         "./src/repositories/survey.repository.ts",
         "./src/repositories/module.repository.ts",
+        "./src/repositories/chart.repository.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5958,6 +5971,9 @@
       "./src/models/module.model.ts": [
         "./node_modules/@loopback/repository/index.d.ts"
       ],
+      "./src/models/chart.model.ts": [
+        "./node_modules/@loopback/repository/index.d.ts"
+      ],
       "./src/models/index.ts": [
         "./src/models/prueba.model.ts",
         "./src/models/user.model.ts",
@@ -5996,7 +6012,8 @@
         "./src/repositories/prueba.repository.ts",
         "./src/repositories/user.repository.ts",
         "./src/repositories/survey.repository.ts",
-        "./src/repositories/module.repository.ts"
+        "./src/repositories/module.repository.ts",
+        "./src/repositories/chart.repository.ts"
       ],
       "./src/controllers/prueba.controller.ts": [
         "./src/repositories/index.ts",
@@ -6066,8 +6083,10 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/models/chart.model.ts": [
-        "./node_modules/@loopback/repository/index.d.ts"
+      "./src/repositories/chart.repository.ts": [
+        "./src/datasources/index.ts",
+        "./node_modules/@loopback/repository/index.d.ts",
+        "./src/models/index.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -6403,9 +6422,15 @@
       "./src/models/user.model.ts",
       "./src/models/survey.model.ts",
       "./src/models/module.model.ts",
+      "./src/models/chart.model.ts",
+      "./src/models/index.ts",
       "./src/datasources/mongo-db.datasource.config.json",
       "./src/datasources/mongo-db.datasource.ts",
       "./src/datasources/index.ts",
+      "./src/repositories/prueba.repository.ts",
+      "./src/repositories/user.repository.ts",
+      "./src/repositories/survey.repository.ts",
+      "./src/repositories/module.repository.ts",
       "./node_modules/@types/debug/index.d.ts",
       "./node_modules/@types/eslint-visitor-keys/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
@@ -6414,17 +6439,12 @@
       "./node_modules/@types/mocha/index.d.ts",
       "./node_modules/@types/on-finished/index.d.ts",
       "./node_modules/@types/type-is/index.d.ts",
-      "./src/models/chart.model.ts",
-      "./src/models/index.ts",
+      "./src/repositories/chart.repository.ts",
+      "./src/repositories/index.ts",
       "./src/controllers/modules.controller.ts",
       "./src/controllers/surveys.controller.ts",
       "./src/controllers/user.controller.ts",
       "./src/controllers/prueba.controller.ts",
-      "./src/repositories/module.repository.ts",
-      "./src/repositories/survey.repository.ts",
-      "./src/repositories/user.repository.ts",
-      "./src/repositories/prueba.repository.ts",
-      "./src/repositories/index.ts",
       "./src/controllers/index.ts"
     ]
   },

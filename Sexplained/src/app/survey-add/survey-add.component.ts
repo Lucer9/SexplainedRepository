@@ -19,19 +19,20 @@ import {
     ModalDismissReasons
 } from '@ng-bootstrap/ng-bootstrap';
 
-@Component({
-    selector: 'app-module-add',
-    templateUrl: './module-add.component.html',
-    styleUrls: ['./module-add.component.scss']
-})
 
-export class ModuleAddComponent implements OnInit {
+
+@Component({
+    selector: 'app-survey-add',
+    templateUrl: './survey-add.component.html',
+    styleUrls: ['./survey-add.component.scss']
+})
+export class SurveyAddComponent implements OnInit {
+
     id
     error = ""
     closeResult
     title = ""
     text = ""
-    price = 0
     complete = true;
     banner = 'https://images.pexels.com/photos/34090/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=750&w=1260'
 
@@ -67,30 +68,26 @@ export class ModuleAddComponent implements OnInit {
             i = this.content.length;
         var object
         switch (item) {
-            case 'title':
+            case 'textarea':
                 object = {
-                    'type': 'title',
+                    'type': 'textarea',
+                    'pregunta': '',
                     'data': ''
                 }
                 break;
-            case 'text':
+            case 'radio':
                 object = {
-                    'type': 'text',
-                    'data': ''
-                }
-                break;
-
-            case 'list':
-                object = {
-                    'type': 'list',
-                    'data': ['', '', '']
+                    'type': 'radio',
+                    'pregunta': '',
+                    'data': ['']
                 }
                 break;
 
-            case 'image':
+            case 'checkbox':
                 object = {
-                    'type': 'image',
-                    'data': ''
+                    'type': 'checkbox',
+                    'pregunta': '',
+                    'data': ['']
                 }
                 break;
         }
@@ -123,9 +120,6 @@ export class ModuleAddComponent implements OnInit {
     }
 
     save() {
-        if (this.price == undefined) {
-            this.price = 0;
-        }
 
         if (this.title == "" ||
             this.text == "" ||
@@ -133,17 +127,11 @@ export class ModuleAddComponent implements OnInit {
             this.error = "No puedes subir un módulo vacio"
             this.complete = false;
         } else {
-            if (this.price < 0) {
-                this.error = "El precio no puede ser negativo"
-                this.complete = false;
-            } else {
-                this.complete = true;
-                for (var i = 0; i < this.content.length; i++) {
-                    if (this.content[i].data == "" || this.content[i].data[0] == "" || this.content[i].data[1] == "" || this.content[i].data[2] == "") {
-                        this.error = "Completa o elimina los campos vacios"
-                        this.complete = false;
-                    }
-
+            this.complete = true;
+            for (var i = 0; i < this.content.length; i++) {
+                if (this.content[i].data == "" || this.content[i].data[0] == "" || this.content[i].data[1] == "" || this.content[i].data[2] == "") {
+                    this.error = "Completa o elimina los campos vacios"
+                    this.complete = false;
                 }
             }
         }
@@ -160,7 +148,7 @@ export class ModuleAddComponent implements OnInit {
                 "name": this.admin.name,
                 "avatar": this.admin.avatar
             },
-            "price": this.price,
+            "people": 0,
             "content": this.content
         }
         console.log(module)
@@ -173,7 +161,6 @@ export class ModuleAddComponent implements OnInit {
                 this.admin.modules.push(res.id)
                 this.userService.updateUser(this.admin).subscribe((res2) => {
                     console.log(res2)
-                    location.replace("http://localhost:4200/adminHome");
 
                 }, (err) => {
                     console.log(err)

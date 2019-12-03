@@ -16,9 +16,14 @@ export class Survey extends Entity {
   title: string;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
-    default: new Date,
+  })
+  text: string;
+
+  @property({
+    type: 'string',
+    required: true,
   })
   date: string;
 
@@ -42,10 +47,11 @@ export class Survey extends Entity {
   people: number;
 
   @property({
-    type: 'object',
+    type: 'array',
+    itemType: 'object',
     required: true,
   })
-  content: object;
+   content?: object[];
 
 
   constructor(data?: Partial<Survey>) {

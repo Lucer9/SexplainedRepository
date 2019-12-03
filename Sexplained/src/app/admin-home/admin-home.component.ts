@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { CardService } from '../card.service';
-import { AdminService } from '../admin.service';
+import { UserService } from '../user.service';
 @Component({
     selector: 'app-admin-home',
     templateUrl: './admin-home.component.html',
     styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
-    id = 13;
+    id;
     admin;
     cards: any[] = [];
     tempCards: any[] = [];
@@ -17,10 +17,11 @@ export class AdminHomeComponent implements OnInit {
 
 
     searcher = ""
-    constructor(private cardService: CardService, private adminService: AdminService) {}
+    constructor(private cardService: CardService, private userService: UserService) {}
 
     ngOnInit() {
-        this.adminService.getAdmin(this.id).subscribe((admin) => {
+        this.id=(localStorage.getItem('token'));
+        this.userService.getUser(this.id).subscribe((admin) => {
                 console.log(admin)
                 this.admin = admin
                 for (var i = 0; i < this.admin.modules.length; i++) {

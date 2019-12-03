@@ -7,4 +7,5 @@ __export(require("./prueba.repository"));
 __export(require("./user.repository"));
 __export(require("./survey.repository"));
 __export(require("./module.repository"));
+__export(require("./chart.repository"));
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import {Router} from '@angular/router';
+
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -35,10 +37,21 @@ export class LoginComponent implements OnInit {
     enviarFormulario() {
         this.users.forEach(function (userLog, usuarioCheck) {
             if (userLog.mail == this.usuario.mail && userLog.password == this.usuario.password) {
-//                this.router.navigate(['/modulos']);
-                console.log(userLog)
+                //                this.router.navigate(['/modulos']);
+                console.log(userLog.type)
+                if (userLog.type == "user") {
+                    location.replace("http://localhost:4200/modulos");
+                    localStorage.setItem('token', userLog.id);
+
+                } else
+                if (userLog.type == "admin") {
+                    location.replace("http://localhost:4200/adminHome");
+                    localStorage.setItem('token', userLog.id);
+
+                } else {
+                    document.getElementById("passCheckLabel").style.display = 'block';
+                }
             }
         }, this);
-        document.getElementById("passCheckLabel").style.display = 'block';
     }
 }
