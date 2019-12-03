@@ -1,0 +1,693 @@
+swagger: '2.0'
+info:
+ version: '1'
+ title: 'Sexplained'
+ description: 'A simple API'
+paths: 
+ /users:
+   post:
+     summary: Agregar nuevos usuarios
+     operationId: agregarUsuario
+     tags:
+       - users
+     consumes:
+     - application/json
+     produces:
+     - application/json
+     parameters:
+     - in: body
+       name: body
+       description: Informacion de usuario
+       schema:
+         $ref: '#/definitions/User'
+     responses:
+       201:
+         description: Éxito al crear
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+   patch:
+     tags:
+     - users
+     summary: Update an existing user
+     operationId: updateUser
+     consumes:
+     - application/json
+     - application/xml
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - in: body
+       name: body
+       description: Objeto a modificar
+       required: true
+       schema:
+         $ref: '#/definitions/User'
+     responses:
+       200:
+         description: Modificación exitosa
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+
+   get:
+     summary: Devuelve una lista de usuarios
+     operationId: traerUsuarios
+     tags:
+       - users
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: query
+         description: ID de usuarios si se desea solo traer específicos
+         type: array
+         items:
+           type: string
+         required: false
+       - name: tipo
+         in: query
+         description: Tipo de usuarios que se desean recuperar
+         type: string
+         required: false
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   delete:
+       summary: Borrar un usuario
+       operationId: borrarUsuario
+       tags:
+         - users
+       consumes:
+         - application/json
+       produces:
+         - application/json
+       parameters:
+         - name: id
+           in: path
+           description: ID del usuario a borrar
+           type: string
+           required: true
+       responses:
+         200:
+           description: Lista recuperada
+         400:
+           description: Peticion invalida
+         404:
+           description: Objeto no encontrado
+         500:
+           description: Error en el servidor      
+ /usuarios/login:
+  post:
+   summary: iniciar sesion
+   operationId: usuarioLogin
+   tags:
+     - users
+   consumes:
+   - user
+   produces:
+   - token
+   parameters:
+   - in: body
+     name: body
+     description: Informacion de usuario
+     schema:
+       $ref: '#/definitions/User'
+   responses:
+     200:
+       description: Éxito al iniciar sesion
+     403:
+       description: Token invalido
+     405:
+       description: Petición invalida
+     500:
+       description: Error en el servidor
+ /usuarios/logout:
+  post:
+   summary: cerrar sesion
+   operationId: usuarioLogout
+   tags:
+     - users
+   consumes:
+   - token
+   parameters:
+   - in: body
+     name: token
+     description: Token del usuario
+     schema:
+       $ref: '#/definitions/User'
+   responses:
+     200:
+       description: Éxito al cerrar sesion
+     403:
+       description: Token invalido
+     405:
+       description: Petición invalida
+     500:
+       description: Error en el servidor
+ /modules:
+   post:
+     summary: Agregar nuevos módulos
+     operationId: agregarModulo
+     tags:
+       - modules      
+     consumes:
+     - application/json
+     produces:
+     - application/json
+     parameters:
+     - in: body
+       name: body
+       description: Informacion del módulo
+       schema:
+         $ref: '#/definitions/Module'
+     responses:
+       201:
+         description: Éxito al crear
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+   patch:
+     tags:
+     - modules
+     summary: Update an existing module
+     operationId: updatModule
+     consumes:
+     - application/json
+     - application/xml
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - in: body
+       name: body
+       description: Objeto a modificar
+       required: true
+       schema:
+         $ref: '#/definitions/Module'
+     responses:
+       200:
+         description: Modificación exitosa
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   get:
+     summary: Devuelve una lista de módulos
+     operationId: traerModules
+     tags:
+       - modules
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: query
+         description: ID de módulos si se desea solo traer específicos
+         type: array
+         items:
+           type: string
+         required: false
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   delete:
+     summary: Borrar un módulo
+     operationId: borrarModulo
+     tags:
+       - modules
+     consumes:
+       - application/json
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: path
+         description: ID del usuario a borrar
+         type: string
+         required: true
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+ /modules/{data}:
+   get:
+     tags:
+     - modules
+     summary: Find module
+     description: Regresa los ids de los modulos que tengan data
+     operationId: getModuleByData
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - name: data
+       in: path
+       description: Dato a buscar
+       required: true
+       type: string
+     responses:
+       200:
+         description: Operacion Exitosa
+         schema:
+           $ref: '#/definitions/Module'
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+
+ /surveys:
+   post:
+     summary: Agregar nuevos cuestionarios
+     operationId: agregarCuestionario
+     tags:
+       - surveys      
+     consumes:
+     - application/json
+     produces:
+     - application/json
+     parameters:
+     - in: body
+       name: body
+       description: Informacion del cuestionario
+       schema:
+         $ref: '#/definitions/Survey'
+     responses:
+       201:
+         description: Éxito al crear
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+   patch:
+     tags:
+     - surveys
+     summary: Actualizar un survey
+     operationId: updatSurvey
+     consumes:
+     - application/json
+     - application/xml
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - in: body
+       name: body
+       description: Objeto a modificar
+       required: true
+       schema:
+         $ref: '#/definitions/Survey'
+     responses:
+       200:
+         description: Modificación exitosa
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   get:
+     summary: Devuelve una lista de surveys
+     operationId: traerSurveys
+     tags:
+       - surveys
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: query
+         description: ID de surveys si se desea solo traer específicos
+         type: array
+         items:
+           type: string
+         required: false
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   delete:
+       summary: Borrar un cuestionario
+       operationId: borrarSurvey
+       tags:
+         - surveys
+       consumes:
+         - application/json
+       produces:
+         - application/json
+       parameters:
+         - name: id
+           in: path
+           description: ID del cuestionario a borrar
+           type: string
+           required: true
+       responses:
+         200:
+           description: Lista recuperada
+         400:
+           description: Peticion invalida
+         404:
+           description: Objeto no encontrado
+         500:
+           description: Error en el servidor
+ /surveys/{data}:
+   get:
+     tags:
+     - surveys
+     summary: Find survey
+     description: Regresa los ids de los surveys que tengan data
+     operationId: getSurveyByData
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - name: data
+       in: path
+       description: Dato a buscar
+       required: true
+       type: string
+     responses:
+       200:
+         description: Operacion Exitosa
+         schema:
+           $ref: '#/definitions/Survey'
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+ /charts:
+   post:
+     summary: Agregar nuevas gráficas
+     operationId: agregarGrafica
+     tags:
+       - charts  
+     consumes:
+     - application/json
+     produces:
+     - application/json
+     parameters:
+     - in: body
+       name: body
+       description: Informacion de la gráfica
+       schema:
+         $ref: '#/definitions/Chart'
+     responses:
+       201:
+         description: Éxito al crear
+       405:
+         description: Petición invalida
+       500:
+         description: Error en el servidor
+   patch:
+     tags:
+     - charts
+     summary: Update an existing Chart
+     operationId: updatChart
+     consumes:
+     - application/json
+     - application/xml
+     produces:
+     - application/json
+     - application/xml
+     parameters:
+     - in: body
+       name: body
+       description: Objeto a modificar
+       required: true
+       schema:
+         $ref: '#/definitions/Chart'
+     responses:
+       200:
+         description: Modificación exitosa
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   get:
+     summary: Devuelve una lista de gráficas
+     operationId: traerCharts
+     tags:
+       - charts
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: query
+         description: ID de gráficas si se desea solo traer específicos
+         type: array
+         items:
+           type: string
+         required: false
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+   delete:
+     summary: Borrar una gráfica
+     operationId: borrarGrafica
+     tags:
+       - charts
+     consumes:
+       - application/json
+     produces:
+       - application/json
+     parameters:
+       - name: id
+         in: path
+         description: ID del usuario a borrar
+         type: string
+         required: true
+     responses:
+       200:
+         description: Lista recuperada
+       400:
+         description: Peticion invalida
+       404:
+         description: Objeto no encontrado
+       500:
+         description: Error en el servidor
+
+
+
+ /uploadImage:
+   post:
+     tags:
+     - uploadImage
+     summary: uploads an image
+     operationId: uploadFile
+     consumes:
+     - multipart/form-data
+     produces:
+     - application/json
+     parameters:
+     - name: file
+       in: formData
+       description: file to upload
+       required: false
+       type: file
+     responses:
+       200:
+         description: successful operation
+         schema:
+           $ref: '#/definitions/ApiResponse'
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+# basePath: /Warlocko/Sexplained/1
+schemes:
+- https
+
+definitions:
+ User:
+   type : object
+   properties:
+     id: 
+       type: string
+     name:
+       type: string
+       description: Nombre del usuario
+     mail:
+       type: string
+       description: Correo del usuario
+     password:
+       type: string
+       description: Contraseña del usuario
+     type:
+       type: string
+       description: Tipo de usuario
+     #Tipo Usuario = Normal
+     bought_modules:
+       type: array
+       items:
+         type: integer
+         format: int64
+       description: Arreglo de los id's de los módulos comprados
+     cart:
+       type: array
+       items:
+         type: integer
+         format: int64
+       description: Arreglo de los id's de los módulos en el carrito
+     #Tipo Usuario = Admin
+     phone:
+       type: string
+       description: Telefono del usuario
+     avatar:
+       type: string
+       description: Imagen de perfil
+     info:
+       type: string
+       description: Información del usuario
+     banner:
+       type: string
+       description: Imagen de fondo  
+     modules:
+       type: array
+       items:
+         type: integer
+         format: int64
+       description: Arreglo de los id's de los módulos hechos por el usuario
+     surveys:
+       type: array
+       items:
+         type: integer
+         format: int64
+       description: Arreglo de los id's de las encuestas hechos por el usuario
+
+ Survey:
+   type : object
+   properties:
+     id: 
+       type: string
+     title:
+       type: string
+       description: Titulo de la encuesta
+     text:
+       type: string
+       description: Texto de la encuesta
+     date:
+       type: string
+       description: Fecha de creacion
+
+     banner:
+       type: string
+       description: Imagen de fondo        
+
+     authorId:
+       type: string
+       description: Id del autor   
+
+     people:
+       type: integer
+       format: int64
+       description: Cuanta gente ha contestado esta encuesta          
+
+     content:
+       type: array
+       items:
+         type: object
+       description: Arreglo de la informacion del survey
+
+ Module:
+   type : object
+   properties:
+     id: 
+       type: string
+     title:
+       type: string
+       description: Titulo de la encuesta
+     text:
+       type: string
+       description: Texto de la encuesta
+     date:
+       type: string
+       description: Fecha de creacion
+
+     banner:
+       type: string
+       description: Imagen de fondo        
+
+     authorId:
+       type: string
+       description: Id del autor   
+
+     price:
+       type: integer
+       format: int64
+       description: Cuanta gente ha contestado esta encuesta          
+
+     content:
+       type: array
+       items:
+         type: object
+       description: Arreglo de la informacion del survey
+ Chart:
+    type: object
+    properties:
+      id:
+        type: string
+        description: numero de identificacion de la gráfica.
+      nombre:
+        type: string
+        description: nombre de la gráfica
+      visitas:
+        type: integer
+        format: int64
+      compras:
+        type: integer
+        format: int64
+      ganancias:
+        type: integer
+        format: int64
+      color:
+        type: string
+        description: color que mostrará la página
+      type:
+        type: string
+        description: tipo de gráfica (barras,histograma,etc).
+ ApiResponse:
+   type: object
+   properties:
+     code:
+       type: integer
+       format: int32
+     type:
+       type: string
+     message:
+       type: string
+# Added by API Auto Mocking Plugin
+basePath: /Lucer9/Sexplained/1
