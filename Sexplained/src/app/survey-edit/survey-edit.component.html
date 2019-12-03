@@ -1,1 +1,100 @@
-<p>survey-edit works!</p>
+<app-sidemenu isUser="0" activeTab="/adminHome"></app-sidemenu>
+<div class="home">
+
+    <div class="banner" [ngStyle]="{ 'background-image': 'url(' + card.banner + ')'}"></div>
+    <div class="container">
+        <img class="logo" src="assets/sexplained.svg" alt="">
+        <a>
+            <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + card.author.avatar + ')'}"></div>
+        </a>
+        <input class="title" [(ngModel)]="card.title" placeholder="Titulo" maxlength="25">
+        <input class="image" [(ngModel)]="card.banner" placeholder="Pon el link del banner">
+        <p class="date">{{date}}</p>
+        <br>
+
+        <div class="text">
+            <div class="decoration"></div>
+            <div class="content">
+
+
+                <p>Descripción Corta</p>
+                <textarea [(ngModel)]="card.text" placeholder="Descripción"></textarea>
+
+
+
+                <div *ngFor="let c of card.content; index as i" class="adder">
+
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>+</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <button ngbDropdownItem (click)="prepend('textarea',i)">Pregunta Abierta</button>
+                            <button ngbDropdownItem (click)="prepend('radio',i)">Pregunta Radial</button>
+                            <button ngbDropdownItem (click)="prepend('checkbox',i)">Pregunta Checkbox</button>
+                        </div>
+                    </div>
+                    <input [(ngModel)]="card.content[i].pregunta" placeholder="Pregunta">
+
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="card.content[i].data[0]" placeholder="Respuesta 1">
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="card.content[i].data[1]" placeholder="Respuesta 2">
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="card.content[i].data[2]" placeholder="Respuesta 3">
+
+
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="card.content[i].data[0]" placeholder="Respuesta 1">
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="card.content[i].data[1]" placeholder="Respuesta 2">
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="card.content[i].data[2]" placeholder="Respuesta 3">
+
+                    <i class=" close fa fa-trash" (click)="open(modal,i)"></i>
+                </div>
+
+
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>+</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem (click)="prepend('textarea',0)">Pregunta Abierta</button>
+                        <button ngbDropdownItem (click)="prepend('radio',0)">Pregunta Radial</button>
+                        <button ngbDropdownItem (click)="prepend('checkbox',0)">Pregunta Checkbox</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="!complete" class="tt">
+        <p>{{error}}</p>
+    </div>
+    <a href="/" class="back">
+        <p>{{ 'info.regresar' | translate}}</p>
+    </a>
+
+    <a (click)="save()" class="save">
+        <p>{{ 'info.salvar' | translate}}</p>
+    </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+<ng-template #modal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Eliminar</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>¿Seguro que quieres eliminar esto?<br> <strong>No lo podras recuperar</strong></p>
+    </div>
+    <div class="modal-footer">
+        <div class="modal-footer">
+            <button type="button" (click)="modal.dismiss('')">{{ 'payment.cancelar' | translate}}</button>
+            <button type="button" class="full" (click)="modal.dismiss('remove')">{{ 'payment.aceptar' | translate}}</button>
+        </div>
+    </div>
+</ng-template>

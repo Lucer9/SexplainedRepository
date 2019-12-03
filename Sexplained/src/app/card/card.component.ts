@@ -58,7 +58,12 @@ export class CardComponent implements OnInit {
 
     open(content) {
         if (this.isUser == '0') {
-            window.open("edit/modulos/" + this.id , '_blank');
+            console.log(this.price)
+            if (this.people == "") {
+                window.open("edit/modulos/" + this.id, '_blank');
+            }else{
+                 window.open("edit/survey/" + this.id, '_blank');
+            }
         } else {
             if (this.price > 0) {
                 this.modalService.open(content, {

@@ -6,10 +6,7 @@ import {
 import {
     HttpClient
 } from '@angular/common/http';
-import {
-    Router,
-    ActivatedRoute
-} from '@angular/router';
+import { Router,ActivatedRoute} from '@angular/router';
 import {
     UserService
 } from '../user.service';
@@ -27,7 +24,6 @@ import {
     styleUrls: ['./module-edit.component.scss']
 })
 export class ModuleEditComponent implements OnInit {
-    id = "13";
     closeResult
     error = ""
     complete = true;
@@ -43,6 +39,8 @@ export class ModuleEditComponent implements OnInit {
         "content": []
 
     };
+
+    id = "13";
     sub;
 
     constructor(private activateRoute: ActivatedRoute, private router: Router, private userService: UserService, private cardService: CardService, private modalService: NgbModal) {
@@ -151,7 +149,7 @@ export class ModuleEditComponent implements OnInit {
             console.log("PATCH")
             this.cardService.updateCard(this.card).subscribe((res) => {
                 console.log(res)
-                location.replace("http://localhost:4200/adminHome");
+                    location.replace("http://localhost:4200/adminHome");
 
             }, (err) => {
                 console.log(err);

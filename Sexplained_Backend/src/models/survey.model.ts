@@ -34,10 +34,10 @@ export class Survey extends Entity {
   banner: string;
 
   @property({
-    type: 'string',
+    type: 'object',
     required: true,
   })
-  authorId: string;
+  author: object;
 
   @property({
     type: 'number',

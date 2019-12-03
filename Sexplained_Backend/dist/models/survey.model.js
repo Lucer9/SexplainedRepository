@@ -53,11 +53,11 @@ __decorate([
 ], Survey.prototype, "banner", void 0);
 __decorate([
     repository_1.property({
-        type: 'string',
+        type: 'object',
         required: true,
     }),
-    __metadata("design:type", String)
-], Survey.prototype, "authorId", void 0);
+    __metadata("design:type", Object)
+], Survey.prototype, "author", void 0);
 __decorate([
     repository_1.property({
         type: 'number',

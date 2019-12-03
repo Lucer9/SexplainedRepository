@@ -48,10 +48,10 @@ export class LoginComponent implements OnInit {
                     location.replace("http://localhost:4200/adminHome");
                     localStorage.setItem('token', userLog.id);
 
-                } else {
+                } 
+            }else {
                     document.getElementById("passCheckLabel").style.display = 'block';
                 }
-            }
         }, this);
     }
 }

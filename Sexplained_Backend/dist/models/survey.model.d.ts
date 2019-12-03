@@ -5,7 +5,7 @@ export declare class Survey extends Entity {
     text: string;
     date: string;
     banner: string;
-    authorId: string;
+    author: object;
     people: number;
     content?: object[];
     constructor(data?: Partial<Survey>);

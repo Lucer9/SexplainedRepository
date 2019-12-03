@@ -27,20 +27,21 @@
                     <div ngbDropdown class="d-inline-block">
                         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>+</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="prepend('textarea',i)">Pregunta Abierta</button>
-                        <button ngbDropdownItem (click)="prepend('radio',i)">Pregunta Radial</button>
-                        <button ngbDropdownItem (click)="prepend('checkbox',i)">Pregunta Checkbox</button>
+                            <button ngbDropdownItem (click)="prepend('textarea',i)">Pregunta Abierta</button>
+                            <button ngbDropdownItem (click)="prepend('radio',i)">Pregunta Radial</button>
+                            <button ngbDropdownItem (click)="prepend('checkbox',i)">Pregunta Checkbox</button>
                         </div>
                     </div>
-                    <input *ngIf="c.type=='title'" [(ngModel)]="content[i].data" placeholder="Ingresa un título">
-                    <textarea *ngIf="c.type=='text'" [(ngModel)]="content[i].data" aria-busy="" rows="5" placeholder="Ingresa un texto"></textarea>
-                    <input *ngIf="c.type=='list'" [(ngModel)]="content[i].data[0]" placeholder="Elemento 1">
-                    <input *ngIf="c.type=='list'" [(ngModel)]="content[i].data[1]" placeholder="Elemento 2">
-                    <input *ngIf="c.type=='list'" [(ngModel)]="content[i].data[2]" placeholder="Elemento 3">
+                    <input [(ngModel)]="content[i].pregunta" placeholder="Pregunta">
 
-                    <img *ngIf="c.type=='image'" [src]=content[i].data>
-                    <input *ngIf="c.type=='image'" [(ngModel)]="content[i].data" placeholder="Pon el link de la imagen">
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="content[i].data[0]" placeholder="Respuesta 1">
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="content[i].data[1]" placeholder="Respuesta 2">
+                    <input *ngIf="c.type=='radio'" [(ngModel)]="content[i].data[2]" placeholder="Respuesta 3">
 
+
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="content[i].data[0]" placeholder="Respuesta 1">
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="content[i].data[1]" placeholder="Respuesta 2">
+                    <input *ngIf="c.type=='checkbox'" [(ngModel)]="content[i].data[2]" placeholder="Respuesta 3">
 
                     <i class=" close fa fa-trash" (click)="open(modal,i)"></i>
                 </div>

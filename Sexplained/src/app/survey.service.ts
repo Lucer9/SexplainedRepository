@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SurveyService {
 
-  SERVER_URL: string = "http://localhost:3000";
+  SERVER_URL: string = "http://localhost:3000/";
   constructor(private httpClient: HttpClient) { }
 
   public getSurveys(){ 

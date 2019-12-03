@@ -6,13 +6,13 @@ import {
 import {
     HttpClient
 } from '@angular/common/http';
-import {
-    UserService
-} from '../user.service';
+
+
+import { UserService} from '../user.service';
 
 import {
-    CardService
-} from '../card.service';
+    SurveyService
+} from '../survey.service';
 
 import {
     NgbModal,
@@ -48,7 +48,7 @@ export class SurveyAddComponent implements OnInit {
     content = []
     sub;
 
-    constructor(private userService: UserService, private cardService: CardService, private modalService: NgbModal) {}
+    constructor(private userService: UserService, private surveyService: SurveyService, private modalService: NgbModal) {}
 
     ngOnInit() {
         this.id = (localStorage.getItem('token'));
@@ -79,7 +79,7 @@ export class SurveyAddComponent implements OnInit {
                 object = {
                     'type': 'radio',
                     'pregunta': '',
-                    'data': ['']
+                    'data': ['','','']
                 }
                 break;
 
@@ -87,7 +87,7 @@ export class SurveyAddComponent implements OnInit {
                 object = {
                     'type': 'checkbox',
                     'pregunta': '',
-                    'data': ['']
+                    'data': ['','','']
                 }
                 break;
         }
@@ -129,7 +129,7 @@ export class SurveyAddComponent implements OnInit {
         } else {
             this.complete = true;
             for (var i = 0; i < this.content.length; i++) {
-                if (this.content[i].data == "" || this.content[i].data[0] == "" || this.content[i].data[1] == "" || this.content[i].data[2] == "") {
+                if (this.content[i].pregunta == "" || this.content[i].data[0] == "" || this.content[i].data[1] == "" || this.content[i].data[2] == "") {
                     this.error = "Completa o elimina los campos vacios"
                     this.complete = false;
                 }
@@ -138,7 +138,7 @@ export class SurveyAddComponent implements OnInit {
 
 
 
-        var module = {
+        var survey = {
             "title": this.title,
             "text": this.text,
             "date": this.date,
@@ -151,17 +151,17 @@ export class SurveyAddComponent implements OnInit {
             "people": 0,
             "content": this.content
         }
-        console.log(module)
+        console.log(survey)
 
         if (this.complete) {
             console.log("POST")
-            this.cardService.createCard(module).subscribe((res) => {
+            this.surveyService.createSurvey(survey).subscribe((res) => {
                 console.log(res)
                 //@ts-ignore
-                this.admin.modules.push(res.id)
+                this.admin.surveys.push(res.id)
                 this.userService.updateUser(this.admin).subscribe((res2) => {
                     console.log(res2)
-
+                    location.replace("http://localhost:4200/adminHome");
                 }, (err) => {
                     console.log(err)
                 });

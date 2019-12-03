@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { CardService } from '../card.service';
+import { SurveyService } from '../survey.service';
 import { UserService } from '../user.service';
 @Component({
     selector: 'app-admin-home',
@@ -17,7 +18,7 @@ export class AdminHomeComponent implements OnInit {
 
 
     searcher = ""
-    constructor(private cardService: CardService, private userService: UserService) {}
+    constructor(private cardService: CardService, private surveyService: SurveyService, private userService: UserService) {}
 
     ngOnInit() {
         this.id=(localStorage.getItem('token'));
@@ -26,6 +27,14 @@ export class AdminHomeComponent implements OnInit {
                 this.admin = admin
                 for (var i = 0; i < this.admin.modules.length; i++) {
                     this.cardService.getCard(this.admin.modules[i]).subscribe((card) => {
+                        this.cards.push(card);
+                        this.tempCards.push(card);
+                        console.log(card)
+                    })
+                }
+            
+            for (var i = 0; i < this.admin.surveys.length; i++) {
+                    this.surveyService.getSurvey(this.admin.surveys[i]).subscribe((card) => {
                         this.cards.push(card);
                         this.tempCards.push(card);
                         console.log(card)
